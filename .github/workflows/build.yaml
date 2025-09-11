@@ -1,4 +1,4 @@
-name: Update SVG Date
+name: Update SVG 
 
 on:
   schedule:
@@ -16,12 +16,17 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+      - name: Install dependencies
+        run: pip install requests
       - name: Run Python script
         run: python update_quote_svg.py
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add banner.svg
+          git add quote_background_dark.svg
+          git add quote_background_light.svg
           git commit -m "Update quote" || echo "No changes to commit"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
