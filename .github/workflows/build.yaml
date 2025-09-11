@@ -27,8 +27,7 @@ jobs:
           git add quote_background_dark.svg
           git add quote_background_light.svg
           git commit -m "Update quote" || echo "No changes to commit"
-          git pull --rebase
-          git push
+          git push -f
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 permissions:
