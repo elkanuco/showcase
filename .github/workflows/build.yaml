@@ -1,0 +1,27 @@
+name: Update SVG Date
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs daily at midnight UTC
+  push:
+    branches:
+      - main
+
+jobs:
+  update-svg:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Run Python script
+        run: python update_quote_svg.py
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add banner.svg
+          git commit -m "Update quote" || echo "No changes to commit"
+          git push
