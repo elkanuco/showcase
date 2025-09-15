@@ -1,0 +1,34 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.ehcache.org/v3"
+        xmlns:jsr107="http://www.ehcache.org/v3/jsr107"
+        xsi:schemaLocation="
+            http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core-3.0.xsd
+            http://www.ehcache.org/v3/jsr107 http://www.ehcache.org/schema/ehcache-107-ext-3.0.xsd">
+
+
+    <cache-template name="default">
+        <!--Ensure objects are not stored by reference-->
+        <key-type copier="org.ehcache.impl.copy.SerializingCopier">java.lang.Object</key-type>
+        <value-type copier="org.ehcache.impl.copy.SerializingCopier">java.lang.Object</value-type>
+
+        <expiry>
+            <!-- 30 days-->
+            <ttl unit="seconds">86400</ttl>
+        </expiry>
+
+
+        <resources>
+            <!-- Capacity of # cache entries. This is the maximum number of entries before eviction starts -->
+            <heap>1000</heap>
+            <!-- For the off-heap store we configure a capacity of # MB.-->
+            <offheap unit="MB">1</offheap>
+            <!-- As disk cache, we configure # MB.
+             Important: The disk cache must always have a higher memory capacity than the heap cache
+             Otherwise the application throws an exception during application startup when parsing the XML file.-->
+<!--            <disk persistent="true" unit="MB">50</disk>-->
+        </resources>
+    </cache-template>
+
+    <cache alias="exchangeRates" uses-template="default"/>
+
+</config>

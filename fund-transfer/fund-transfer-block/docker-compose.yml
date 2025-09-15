@@ -1,0 +1,80 @@
+version: "3.8"
+services:
+  redis:
+    image: redis:7.0-alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: ["redis-server", "--save", "60", "1", "--loglevel", "notice"]
+    labels:
+      - "traefik.enable=false" # Not exposed externally by Traefik
+  mock-currency-service:
+    restart: always
+    image: mock-currency-service
+    container_name: mock-currency-service
+    build: currency-mock-service/.
+    ports:
+      - "3000:3000"
+    labels:
+      - "traefik.enable=false" # Not exposed externally by Traefik
+  database:
+    restart: always
+    image: database
+    container_name: database
+    build: database/.
+    environment:
+      - POSTGRES_USER=dbuser
+      - POSTGRES_PASSWORD_FILE=/run/secrets/db_password
+    volumes: 
+      - ./database/dump:/docker-entrypoint-initdb.d/
+    ports:
+      - "5432:5432" 
+    secrets:
+      - db_password
+    labels:
+      - "traefik.enable=false" # Not exposed externally by Traefik
+  fund-transfer-service:
+    restart: always
+    image: fund-transfer-service     
+    build: fund-transfer/.                                          
+    ports:
+      - "8080" # only the internal port
+    environment:
+      - EXCHANGERATE_CLIENT_URL=http://mock-currency-service:3000
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://database:5432/dbuser
+      - SPRING_DATASOURCE_USERNAME=dbuser
+      - SPRING_DATASOURCE_PASSWORD=${SPRING_DATASOURCE_PASSWORD}
+      - SPRING_REDIS_HOST=redis 
+      - SPRING_REDIS_PORT=6379  
+    depends_on:
+      - database  
+      - redis                                         
+      - mock-currency-service
+    secrets:
+      - db_password
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.fundtransfer.rule=Host(`fundtransfer.localhost`)"
+      - "traefik.http.routers.fundtransfer.entrypoints=web"
+      - "traefik.http.services.fundtransfer.loadbalancer.server.port=8080"
+  traefik:
+    image: traefik:v3.5
+    container_name: traefik
+    command:
+      - "--api.insecure=true" 
+      - "--providers.docker=true"
+      - "--providers.docker.exposedbydefault=false"
+      - "--entryPoints.web.address=:80"
+    ports:
+      - "80:80"      
+      - "8080:8080"  
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
+secrets:
+  db_password:
+    file: ./db_password.txt
+volumes:
+  redis-data:
