@@ -1,16 +1,17 @@
 # Simple bank transfer application
 
-> [!WARNING] <b>Discloser</b>
-> <br> for further technical details go to : [Notes](docs/NOTES.md)<br>
+> [!WARNING]
+> For further technical details go to : [Notes](docs/NOTES.md)<br>
+> <br><b>Discloser</b>
 >
 > - *THIS IS JUST A POC*
->   - to every problem there are potentially multiple solutions your solution might be different
+>   - to every problem there are potentially multiple solutions your solution might be different ^^
 > - *NOT INTENDEND TO BE PERFECT*
 >   - This is a showcase integrating a set of tools rendering a common outcome
->     - a scalable restful api exposing basic crud and additional <i>business-specific</i> operations
+>     - a scalable restful api exposing basic crud and additional <i>business-specific</i> operations that can be lead to concurrent <i>transactions</i>
 > - *NOT FULLY TESTED*
 >   - Tests were added to show-case the strategy and the capability of testing
->     - The strategy is basically cover all relevant cyclomatic complexity with unit test and cover nominal e2e use cases with integration tests
+>     - The strategy should be basically to cover all relevant cyclomatic complexity with unit test and cover nominal e2e use cases with integration tests
 >       - to avoid redundancy and overly complex tests, and respecting the idempotence of test coverage
 
 ## REQUIREMENTS
@@ -40,4 +41,4 @@
       - 'DATA-REST-API' definition was built by SPRING REST DATA, and the FK links are URI strings
         - e.g: <http://fundtransfer.localhost/datarestapi/accounts/1>
 - Access Traefik UI to inspect nodes
-  - http://localhost:8080/dashboard/
+  - <http://localhost:8080/dashboard/>
