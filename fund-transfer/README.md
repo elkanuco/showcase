@@ -1,8 +1,17 @@
 # Simple bank transfer application
 
-> [!TIP]
-> This is a "showcase" of tools to build and deploy a scalable Spring RESTful api for concurrent operations
-> <br>To have more technical details go to : [Notes](docs/NOTES.md)
+> [!WARNING] <b>Discloser</b>
+> <br> for further technical details go to : [Notes](docs/NOTES.md)<br>
+>
+> - *THIS IS JUST A POC*
+>   - to every problem there are potentially multiple solutions your solution might be different
+> - *NOT INTENDEND TO BE PERFECT*
+>   - This is a showcase integrating a set of tools rendering a common outcome
+>     - a scalable restful api exposing basic crud and additional <i>business-specific</i> operations
+> - *NOT FULLY TESTED*
+>   - Tests were added to show-case the strategy and the capability of testing
+>     - The strategy is basically cover all relevant cyclomatic complexity with unit test and cover nominal e2e use cases with integration tests
+>       - to avoid redundancy and overly complex tests, and respecting the idempotence of test coverage
 
 ## REQUIREMENTS
 

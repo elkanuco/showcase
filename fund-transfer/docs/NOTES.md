@@ -43,16 +43,6 @@
 - Using experimental Maven plugin to reduce size of the jar and load dependencies on startup
   - <https://github.com/dsyer/spring-boot-thin-launcher>
 
-## Final Remarks
-
-> [!WARNING]
-> Discloser
-> - *THIS IS JUST A POC* : to every problem there are multiple solutions 
-> - *NOT INTENDEND TO BE PERFECT* This is a showcase of integrating different tools rendering a valid outcome
-> - *NOT FULLY TESTED* Tests were added to show-case the strategy and the capability of testing
->   - The strategy is basically cover all relevant cyclomatic complexity with unit testing and cover nominal e2e use cases with integration tests
->     - to avoid redundancy and overly complex tests, and respecting the idempotence of test coverage
-
 ## Useful commands
 
 - deploy the containers ./setup.sh
