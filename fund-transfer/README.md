@@ -2,7 +2,7 @@
 
 > [!TIP]
 > This is a "showcase" of tools to build and deploy a scalable Spring RESTful api for concurrent operations
-> To have more technical details go to : [Notes](docs/NOTES.md)
+> <br>To have more technical details go to : [Notes](docs/NOTES.md)
 
 ## REQUIREMENTS
 

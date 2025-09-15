@@ -1,7 +1,7 @@
 # RESTful API : fund transfer "showcase"
 
 - Docker/Docker compose used to deploy the setup
-- Maven 3.9.9 + JDK 21 (current setup on my personal computer)
+- Maven 3.9.9 + JDK 21
 - Mock service to serve basic GET call with a random exchange-rate
   - implemented using expressjs wrapped with docker
   - <https://expressjs.com/>
@@ -40,17 +40,17 @@
   - <http://localhost:8080/dashboard/#/http/services/fundtransfer@docker>
 - Added Redis to serve as distributed cache and distributed lock on the accounts
   - <https://redis.io/>
-- Using experimental Maven plugin to reduce size of the jar and load dependencies on runtime
+- Using experimental Maven plugin to reduce size of the jar and load dependencies on startup
   - <https://github.com/dsyer/spring-boot-thin-launcher>
 
-## Final Remarks 
+## Final Remarks
 
 > [!WARNING]
 > Discloser
 > - *THIS IS JUST A POC* : to every problem there are multiple solutions 
 > - *NOT INTENDEND TO BE PERFECT* This is a showcase of integrating different tools rendering a valid outcome
 > - *NOT FULLY TESTED* Tests were added to show-case the strategy and the capability of testing
->   - The strategy is basically cover all relevant cyclomatic complexity with unit testing and cover nominal use cases with integration tests
+>   - The strategy is basically cover all relevant cyclomatic complexity with unit testing and cover nominal e2e use cases with integration tests
 >     - to avoid redundancy and overly complex tests, and respecting the idempotence of test coverage
 
 ## Useful commands
@@ -79,6 +79,8 @@
 - db replication, integrate db proxy
 - deploy local registry
 - transition into swarm or kubernetes
+- integrate a tool to stress test api : Jmeter, Gatling
+- integrate a tool to monitor metrics: graphana, prometheus, datadog, elk
 
 | [Back](../README.md)|
 |--------|
