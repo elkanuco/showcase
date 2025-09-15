@@ -1,4 +1,4 @@
-# RESTful API : fund transfer show case
+# RESTful API : fund transfer "showcase"
 
 - Docker/Docker compose used to deploy the setup
 - Maven 3.9.9 + JDK 21 (current setup on my personal computer)
@@ -45,7 +45,8 @@
 
 ## Final Remarks 
 
-> [!WARNING]  Discloser
+> [!WARNING]
+> Discloser
 > - *THIS IS JUST A POC* : to every problem there are multiple solutions 
 > - *NOT INTENDEND TO BE PERFECT* This is a showcase of integrating different tools rendering a valid outcome
 > - *NOT FULLY TESTED* Tests were added to show-case the strategy and the capability of testing
