@@ -1,16 +1,18 @@
 import requests
 import xml.etree.ElementTree as ET
 
+
 def update_svg_file(svg_path, quote, author):
     try:
         # Load the SVG file
         tree = ET.parse(svg_path)
         root = tree.getroot()
 
-        # Update the quote and author text elements
-        quote_elem = root.find(".//*[@id='quote']")
-        if quote_elem is not None:
-            quote_elem.text = quote
+        # Find the <div> with id="quote" inside <foreignObject>
+        for foreign_object in root.findall(".//{http://www.w3.org/2000/svg}foreignObject"):
+            for div in foreign_object.findall(".//{http://www.w3.org/1999/xhtml}div[@id='quote']"):
+                div.text = quote  # Update the text content
+
         author_elem = root.find(".//*[@id='author']")
         if author_elem is not None:
             author_elem.text = f"— {author}"
