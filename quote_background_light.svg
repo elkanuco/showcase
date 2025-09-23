@@ -5,8 +5,8 @@
   </ns0:style>
   
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">It is our choices that show what we truly are, far more than our abilities.</html:div>
+    <html:div class="wrap" id="quote">Rest when you're weary. Refresh and renew yourself, your body, your mind, your spirit. Then get back to work.</html:div>
   </ns0:foreignObject>
   
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Albus Dumbledore</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Ralph Marston</ns0:text>
 </ns0:svg>
