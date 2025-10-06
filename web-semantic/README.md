@@ -145,7 +145,12 @@ WHERE {
 
 Checkout the **publicly accessible** SPARQL endpoint for [OPOCE](https://op.europa.eu/en/) : <https://publications.europa.eu/webapi/rdf/sparql>
 
-## Personal milestones
+## Milestones
 
 - Lead the migration from Jboss to Tomcat along with Atomikos and handled the JDK migration as well
 - Participated in the call for tenders answering the questions about a potential migration from Oracle RDF store to an alternative framework. We won the contract and migrated to Virtuoso Triple store
+
+## Potential references
+
+- main OP team : Marc KÜSTER (Head of IT at OP) and external consultants Patrick Gratz, Sebastien Thelen
+- main Arhs team: Davide Galina and Arnaud Koster
