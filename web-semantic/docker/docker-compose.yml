@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  virtuoso:
+    image: openlink/virtuoso-opensource-7:latest
+    container_name: virtuoso-opensource-7
+    ports:
+      - "1111:1111"   # Virtuoso database SQL port
+      - "8890:8890"   # HTTP/SPARQL endpoint port
+    volumes:
+      - ./database:/database    # Persist Virtuoso DB data
+      - ./import:/import        # Folder for data import files
+      - ./logs:/var/lib/virtuoso/log # Logs folder
+    environment:
+      - DBA_PASSWORD=dba        # Set the dba user password here
+    restart: unless-stopped

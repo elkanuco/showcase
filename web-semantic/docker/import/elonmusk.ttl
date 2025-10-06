@@ -1,0 +1,213 @@
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Main CV instance
+<http://example.org/cv/elon-musk>
+    a cv:CV ;
+    cv:aboutPerson <http://example.org/person/elon-musk> ;
+    cv:cvTitle "Curriculum Vitae of Elon Musk" ;
+    cv:cvDescription "Comprehensive resume detailing professional experience, education, and skills of Elon Musk, entrepreneur and CEO of Tesla, SpaceX, and other ventures." ;
+    cv:cvIsActive "true"^^xsd:boolean ;
+    cv:cvIsConfidential "false"^^xsd:boolean ;
+    cv:cvCopyright "Copyright 2025 Elon Musk. All rights reserved." ;
+    cv:lastUpdate "2025-09-17"^^xsd:date ;
+    cv:hasWorkHistory <http://example.org/workhistory/tesla> , <http://example.org/workhistory/spacex> , <http://example.org/workhistory/xai> , <http://example.org/workhistory/doge> ;
+    cv:hasEducation <http://example.org/education/upenn> , <http://example.org/education/preston> ;
+    cv:hasSkill <http://example.org/skill/programming> , <http://example.org/skill/engineering> , <http://example.org/skill/leadership> , <http://example.org/skill/languages> ;
+    cv:hasTarget <http://example.org/target/job> ;
+    cv:hasOtherInfo <http://example.org/otherinfo/philanthropy> .
+
+# Person details
+<http://example.org/person/elon-musk>
+    a foaf:Person ;
+    foaf:name "Elon Reeve Musk" ;
+    cv:birthPlace "Pretoria, South Africa" ;
+    cv:gender "male" ;
+    cv:hasNationality "South African, Canadian, American" ;
+    cv:hasCitizenship <http://www.daml.org/2001/09/countries/countries.daml#ZAF> , <http://www.daml.org/2001/09/countries/countries.daml#CAN> , <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:maritalStatus "divorced" ;
+    cv:noOfChildren "14" ;
+    cv:hasDriversLicense "true"^^xsd:boolean .
+
+# Work History: Tesla
+<http://example.org/workhistory/tesla>
+    a cv:WorkHistory ;
+    cv:employedIn <http://example.org/company/tesla> ;
+    cv:startDate "2004"^^xsd:gYear ;
+    cv:endDate "" ;  # Ongoing
+    cv:isCurrent "true"^^xsd:boolean ;
+    cv:jobTitle "CEO and Product Architect" ;
+    cv:jobDescription "Joined Tesla as Chairman and led the company as CEO since 2008. Oversaw the development of electric vehicles like the Model S, Model 3, Cybertruck, and advancements in autonomous driving technology. Expanded Tesla into energy storage with Powerwall and solar products." ;
+    cv:jobType "employee" ;
+    cv:careerLevel "executive" ;
+    cv:numSubordinates "thousands" .
+
+# Company: Tesla
+<http://example.org/company/tesla>
+    a cv:Company ;
+    cv:Name "Tesla, Inc." ;
+    cv:URL "https://www.tesla.com" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Austin, Texas" ;
+    cv:Industry "Automotive / Electric Vehicles" ;
+    cv:Notes "Leading manufacturer of electric vehicles and sustainable energy solutions." .
+
+# Work History: SpaceX
+<http://example.org/workhistory/spacex>
+    a cv:WorkHistory ;
+    cv:employedIn <http://example.org/company/spacex> ;
+    cv:startDate "2002"^^xsd:gYear ;
+    cv:endDate "" ;  # Ongoing
+    cv:isCurrent "true"^^xsd:boolean ;
+    cv:jobTitle "Founder, CEO, and Chief Engineer" ;
+    cv:jobDescription "Founded SpaceX to reduce space transportation costs and enable Mars colonization. Developed reusable rockets like Falcon 9 and Starship. Launched Starlink constellation with over 7,600 satellites as of 2025. Achieved milestones including crewed missions to the ISS and first private company to send astronauts to space." ;
+    cv:jobType "employee" ;
+    cv:careerLevel "executive" ;
+    cv:numSubordinates "thousands" .
+
+# Company: SpaceX
+<http://example.org/company/spacex>
+    a cv:Company ;
+    cv:Name "SpaceX" ;
+    cv:URL "https://www.spacex.com" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Hawthorne, California" ;
+    cv:Industry "Aerospace" ;
+    cv:Notes "Pioneering reusable rocket technology and satellite internet via Starlink." .
+
+# Work History: xAI
+<http://example.org/workhistory/xai>
+    a cv:WorkHistory ;
+    cv:employedIn <http://example.org/company/xai> ;
+    cv:startDate "2023"^^xsd:gYear ;
+    cv:endDate "" ;  # Ongoing
+    cv:isCurrent "true"^^xsd:boolean ;
+    cv:jobTitle "Founder and CEO" ;
+    cv:jobDescription "Founded xAI in 2023 to understand the true nature of the universe through AI. Acquired X (formerly Twitter) in March 2025 in an all-stock deal valued at $33 billion to integrate AI capabilities with social platform reach." ;
+    cv:jobType "employee" ;
+    cv:careerLevel "executive" ;
+    cv:numSubordinates "hundreds" .
+
+# Company: xAI
+<http://example.org/company/xai>
+    a cv:Company ;
+    cv:Name "xAI" ;
+    cv:URL "https://x.ai" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "San Francisco, California" ;
+    cv:Industry "Artificial Intelligence" ;
+    cv:Notes "AI research company focused on advancing scientific discovery." .
+
+# Work History: DOGE
+<http://example.org/workhistory/doge>
+    a cv:WorkHistory ;
+    cv:employedIn <http://example.org/company/doge> ;
+    cv:startDate "2025-01-20"^^xsd:date ;
+    cv:endDate "2025-05"^^xsd:gYear ;  # Ended in May 2025
+    cv:isCurrent "false"^^xsd:boolean ;
+    cv:jobTitle "Senior Advisor and De Facto Head" ;
+    cv:jobDescription "Served as senior advisor to President Donald Trump and led the Department of Government Efficiency (DOGE) from January to May 2025, focusing on reducing federal spending and improving efficiency." ;
+    cv:jobType "contractor" ;
+    cv:careerLevel "executive" ;
+    cv:numSubordinates "hundreds" .
+
+# Company: DOGE
+<http://example.org/company/doge>
+    a cv:Company ;
+    cv:Name "Department of Government Efficiency (DOGE)" ;
+    cv:URL "https://www.whitehouse.gov/doge" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Washington, D.C." ;
+    cv:Industry "Government Advisory" ;
+    cv:Notes "Advisory body created by executive order to streamline U.S. government operations." .
+
+# Education: University of Pennsylvania
+<http://example.org/education/upenn>
+    a cv:Education ;
+    cv:studiedIn <http://example.org/eduorg/upenn> ;
+    cv:eduStartDate "1992"^^xsd:gYear ;
+    cv:eduGradDate "1997"^^xsd:gYear ;
+    cv:degreeType "Bachelor's Degrees" ;
+    cv:eduMajor "Economics and Physics" ;
+    cv:eduDescription "Earned dual Bachelor's degrees in Economics from the Wharton School and Physics from the College of Arts and Sciences. Excelled in academics while working on side projects in programming and business." .
+
+# Educational Organization: University of Pennsylvania
+<http://example.org/eduorg/upenn>
+    a cv:EducationalOrg ;
+    cv:Name "University of Pennsylvania" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Philadelphia, Pennsylvania" ;
+    cv:URL "https://www.upenn.edu" .
+
+# Education: Pretoria Boys High School
+<http://example.org/education/preston>
+    a cv:Education ;
+    cv:studiedIn <http://example.org/eduorg/preston> ;
+    cv:eduStartDate "1989"^^xsd:gYear ;
+    cv:eduGradDate "1990"^^xsd:gYear ;
+    cv:degreeType "High School Diploma" ;
+    cv:eduMajor "Mathematics and Science" ;
+    cv:eduDescription "Attended Pretoria Boys High School, where he developed an interest in computing and physics. Taught himself programming and created his first video game, Blastar, at age 12." .
+
+# Educational Organization: Pretoria Boys High School
+<http://example.org/eduorg/preston>
+    a cv:EducationalOrg ;
+    cv:Name "Pretoria Boys High School" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#ZAF> ;
+    cv:Locality "Pretoria, South Africa" ;
+    cv:URL "https://www.boyshigh.com" .
+
+# Skills
+<http://example.org/skill/programming>
+    a cv:Skill ;
+    cv:skillName "Programming (C, Python, Assembly)" ;
+    cv:skillLevel "5" ;
+    cv:skillYearsExperience "35" ;
+    cv:skillLastUsed "2025" .
+
+<http://example.org/skill/engineering>
+    a cv:Skill ;
+    cv:skillName "Aerospace and Electrical Engineering" ;
+    cv:skillLevel "5" ;
+    cv:skillYearsExperience "25" ;
+    cv:skillLastUsed "2025" .
+
+<http://example.org/skill/leadership>
+    a cv:Skill ;
+    cv:skillName "Leadership and Entrepreneurship" ;
+    cv:skillLevel "5" ;
+    cv:skillYearsExperience "30" ;
+    cv:skillLastUsed "2025" .
+
+<http://example.org/skill/languages>
+    a cv:LanguageSkill ;
+    cv:skillName "English" ;
+    cv:skillLevel "5" ;  # Spoken (inherited)
+    cv:lngSkillLevelReading "5" ;
+    cv:lngSkillLevelWritten "5" ;
+    cv:skillYearsExperience "N/A" .
+
+# Target Job (Hypothetical, as he is CEO)
+<http://example.org/target/job>
+    a cv:Target ;
+    cv:targetJobDescription "Continue leading transformative companies in space exploration, sustainable energy, AI, and government efficiency." ;
+    cv:targetJobType "executive" ;
+    cv:targetJobMode "full-time" ;
+    cv:targetCareerLevel "senior executive" ;
+    cv:targetCompanyIndustry "Technology and Aerospace" ;
+    cv:targetCompanySize "large" ;
+    cv:targetCountry <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:conditionWillTravel "true"^^xsd:boolean ;
+    cv:conditionWillRelocate "false"^^xsd:boolean ;
+    cv:targetSalary "N/A" ;  # As owner
+    cv:targetSalaryCurrency "USD" ;
+    cv:weeksNoticePeriod "0" .
+
+# Other Info: Philanthropy
+<http://example.org/otherinfo/philanthropy>
+    a cv:OtherInfo ;
+    cv:otherInfoType "accomplishments" ;
+    cv:otherInfoDescription "Co-founded the Musk Foundation (2002) focusing on renewable energy, space exploration, and pediatric research. Signed the Giving Pledge in 2012 to donate most of his wealth. Contributed significantly to political causes, including $19 million to the 2025 Wisconsin Supreme Court race. Involved in efforts for education reform and global challenges through xAI and other ventures." .

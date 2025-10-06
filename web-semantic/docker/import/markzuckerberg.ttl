@@ -1,0 +1,138 @@
+@prefix cv: <http://rdfs.org/resume-rdf/cv.rdfs#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Main CV instance
+<http://example.org/cv/mark-zuckerberg>
+    a cv:CV ;
+    cv:aboutPerson <http://example.org/person/mark-zuckerberg> ;
+    cv:cvTitle "Curriculum Vitae of Mark Zuckerberg" ;
+    cv:cvDescription "Comprehensive resume detailing professional experience, education, and skills of Mark Zuckerberg, founder and CEO of Meta Platforms." ;
+    cv:cvIsActive "true"^^xsd:boolean ;
+    cv:cvIsConfidential "false"^^xsd:boolean ;
+    cv:cvCopyright "Copyright 2025 Mark Zuckerberg. All rights reserved." ;
+    cv:lastUpdate "2025-09-17"^^xsd:date ;
+    cv:hasWorkHistory <http://example.org/workhistory/facebook> ;
+    cv:hasEducation <http://example.org/education/harvard> , <http://example.org/education/exeter> ;
+    cv:hasSkill <http://example.org/skill/programming> , <http://example.org/skill/leadership> , <http://example.org/skill/languages> ;
+    cv:hasTarget <http://example.org/target/job> ;
+    cv:hasOtherInfo <http://example.org/otherinfo/philanthropy> .
+
+# Person details
+<http://example.org/person/mark-zuckerberg>
+    a foaf:Person ;
+    foaf:name "Mark Elliot Zuckerberg" ;
+    cv:birthPlace "White Plains, New York, USA" ;
+    cv:gender "male" ;
+    cv:hasNationality "American" ;
+    cv:hasCitizenship <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:maritalStatus "married" ;
+    cv:noOfChildren "3" ;
+    cv:hasDriversLicense "true"^^xsd:boolean .
+
+# Work History: Facebook/Meta
+<http://example.org/workhistory/facebook>
+    a cv:WorkHistory ;
+    cv:employedIn <http://example.org/company/meta> ;
+    cv:startDate "2004-02-04"^^xsd:date ;
+    cv:endDate "" ;  # Ongoing
+    cv:isCurrent "true"^^xsd:boolean ;
+    cv:jobTitle "Founder, Chairman, and CEO" ;
+    cv:jobDescription "Co-founded Facebook (now Meta Platforms) as a social networking site while at Harvard. Led the company's growth from a dorm-room project to a global platform with over 3 billion users. Oversees product strategy, including development of the metaverse, VR/AR technologies, and initiatives in AI and philanthropy through the Chan Zuckerberg Initiative." ;
+    cv:jobType "employee" ;
+    cv:careerLevel "executive" ;
+    cv:numSubordinates "thousands" .
+
+# Company: Meta Platforms
+<http://example.org/company/meta>
+    a cv:Company ;
+    cv:Name "Meta Platforms, Inc." ;
+    cv:URL "https://www.meta.com" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Menlo Park, California" ;
+    cv:Industry "Technology / Social Media" ;
+    cv:Notes "Formerly known as Facebook, Inc. Focuses on building the metaverse and connecting people through social technologies." .
+
+# Education: Harvard University
+<http://example.org/education/harvard>
+    a cv:Education ;
+    cv:studiedIn <http://example.org/eduorg/harvard> ;
+    cv:eduStartDate "2002"^^xsd:gYear ;
+    cv:eduGradDate "N/A" ;  # Dropped out
+    cv:degreeType "Bachelor's (incomplete)" ;
+    cv:eduMajor "Computer Science" ;
+    cv:eduMinor "Psychology" ;
+    cv:eduDescription "Enrolled at Harvard University in 2002 for a double major in Computer Science and Psychology. Developed early versions of social networking tools like CourseMatch and Facemash. Dropped out in 2004 to focus on Facebook full-time." .
+
+# Educational Organization: Harvard
+<http://example.org/eduorg/harvard>
+    a cv:EducationalOrg ;
+    cv:Name "Harvard University" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Cambridge, Massachusetts" ;
+    cv:URL "https://www.harvard.edu" .
+
+# Education: Phillips Exeter Academy
+<http://example.org/education/exeter>
+    a cv:Education ;
+    cv:studiedIn <http://example.org/eduorg/exeter> ;
+    cv:eduStartDate "2000"^^xsd:gYear ;
+    cv:eduGradDate "2002"^^xsd:gYear ;
+    cv:degreeType "High School Diploma" ;
+    cv:eduMajor "Classics and Science" ;
+    cv:eduDescription "Attended Phillips Exeter Academy, a prestigious preparatory school, where he excelled in classics (Latin, Greek, Hebrew) and science. Developed early programming projects and showed interest in computers." .
+
+# Educational Organization: Phillips Exeter Academy
+<http://example.org/eduorg/exeter>
+    a cv:EducationalOrg ;
+    cv:Name "Phillips Exeter Academy" ;
+    cv:Country <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:Locality "Exeter, New Hampshire" ;
+    cv:URL "https://www.exeter.edu" .
+
+# Skills
+<http://example.org/skill/programming>
+    a cv:Skill ;
+    cv:skillName "Programming (C++, PHP, JavaScript)" ;
+    cv:skillLevel "5" ;
+    cv:skillYearsExperience "20" ;
+    cv:skillLastUsed "2025" .
+
+<http://example.org/skill/leadership>
+    a cv:Skill ;
+    cv:skillName "Leadership and Entrepreneurship" ;
+    cv:skillLevel "5" ;
+    cv:skillYearsExperience "20" ;
+    cv:skillLastUsed "2025" .
+
+<http://example.org/skill/languages>
+    a cv:LanguageSkill ;
+    cv:skillName "English" ;
+    cv:skillLevel "5" ;  # Spoken (inherited)
+    cv:lngSkillLevelReading "5" ;
+    cv:lngSkillLevelWritten "5" ;
+    cv:skillYearsExperience "N/A" .
+
+# Target Job (Hypothetical, as he is CEO)
+<http://example.org/target/job>
+    a cv:Target ;
+    cv:targetJobDescription "Continue leading innovative technology companies focused on social connectivity, AI, and the metaverse." ;
+    cv:targetJobType "executive" ;
+    cv:targetJobMode "full-time" ;
+    cv:targetCareerLevel "senior executive" ;
+    cv:targetCompanyIndustry "Technology" ;
+    cv:targetCompanySize "large" ;
+    cv:targetCountry <http://www.daml.org/2001/09/countries/countries.daml#USA> ;
+    cv:conditionWillTravel "true"^^xsd:boolean ;
+    cv:conditionWillRelocate "false"^^xsd:boolean ;
+    cv:targetSalary "N/A" ;  # As owner
+    cv:targetSalaryCurrency "USD" ;
+    cv:weeksNoticePeriod "0" .
+
+# Other Info: Philanthropy
+<http://example.org/otherinfo/philanthropy>
+    a cv:OtherInfo ;
+    cv:otherInfoType "accomplishments" ;
+    cv:otherInfoDescription "Co-founder of the Chan Zuckerberg Initiative (2015), focusing on education reform, disease eradication, and criminal justice. Donated $100 million to Newark Public Schools (2010) and 18 million shares to Silicon Valley Community Foundation (2012). Advocate for immigration reform and technological advancements for public good." .
