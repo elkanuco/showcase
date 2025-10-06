@@ -7,7 +7,7 @@
 
 ## What is the Web Semantic ?
 
-Typically the sentence we find as an answer to this question is "Semantic Web is an extension of the existing World Wide Web". Which is basically true because instead of having resources dispersed and looked through based on scoring algorithms that can link apples to computers, the Semantic Web goes beyond that by binding meaningful and human-readable context (backed by a structured framework that defines the concepts, entities, and relationships within a specific domain of knowledge, an ontology) behind each unique resource ensuring that when we look through the graph we have a more specific and concise result
+Typically the sentence we find as an answer to this question is "Semantic Web is an extension of the existing World Wide Web". Which is basically true because instead of having resources dispersed and looked through based on scoring algorithms that can link apples to computers, the Semantic Web goes beyond that by binding meaningful and human-readable context (backed by a structured framework that defines the concepts, entities, and relationships within a specific domain of knowledge: an ontology) behind each unique resource ensuring that when we look through the graph we have a more specific and concise result
 
 ## Why Web Semantic ?
 
