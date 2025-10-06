@@ -23,7 +23,9 @@
 
 ## HOW TO DEPLOY
 
-- Use Git Bash or WSL or any other Unix-like terminal
+- Use Git Bash or WSL or any other Unix-like terminal to execute sh scripts
+  - or  ``docker-compose up --build -d`` and ``docker compose up --scale fund-transfer-service=3 -d``
+  - after ``export SPRING_DATASOURCE_PASSWORD=$(cat db_password.txt)``
 - Navigate to the folder where you cloned the repo
 - Inspect folders
   - inside the folder 'fund-transfer-block' you will find a setup.sh script
