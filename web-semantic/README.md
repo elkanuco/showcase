@@ -1,6 +1,7 @@
 # Web Semantic
 
-> [!TIP] This is a web semantic dōjō
+> [!TIP]
+> This is a web semantic dōjō
 >
 > - CHECK OUT A SETUP for a  ["DEMO" HERE](EXPO.md)
 
