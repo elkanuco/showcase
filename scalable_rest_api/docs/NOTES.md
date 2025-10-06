@@ -66,6 +66,7 @@
 - full test coverage (potentially ignoring negligeable parts)
 - integrate HashiCorp Vault or any other solution for sharing secrets
 - integrate Liquibase or Flyway
+- integrate KeyCloak
 - db replication, integrate db proxy
 - deploy local registry
 - transition into swarm or kubernetes
