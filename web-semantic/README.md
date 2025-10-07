@@ -3,7 +3,7 @@
 > [!TIP]
 > This is a web semantic dōjō
 >
-> - CHECK OUT A SETUP for a  ["DEMO" HERE](EXPO.md)
+> - Have a look at this setup for a "demo" [HERE](EXPO.md)
 
 ## What is the Web Semantic ?
 
@@ -143,7 +143,7 @@ WHERE {
 | **ASK** | Checks if a specific pattern exists in the data. | A simple Boolean answer (true or false). |
 | **DESCRIBE** | Returns an RDF graph that provides a description of a resource. | An RDF graph describing the entity. |
 
-Checkout the **publicly accessible** SPARQL endpoint for [OPOCE](https://op.europa.eu/en/) : <https://publications.europa.eu/webapi/rdf/sparql>
+Have a look at the **publicly accessible** SPARQL endpoint for [OPOCE](https://op.europa.eu/en/) : <https://publications.europa.eu/webapi/rdf/sparql>
 
 ## Milestones
 
