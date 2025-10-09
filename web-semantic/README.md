@@ -7,7 +7,9 @@
 
 ## What is the Web Semantic ?
 
-Typically the sentence we find as an answer to this question is "Semantic Web is an extension of the existing World Wide Web". Which is basically true because instead of having resources dispersed and looked through based on scoring algorithms that can link apples to computers, the Semantic Web goes beyond that by binding meaningful and human-readable context (backed by a structured framework that defines the concepts, entities, and relationships within a specific domain of knowledge: an ontology) behind each unique resource ensuring that when we look through the graph we have a more specific and concise result
+Typically the sentence we find as an answer to this question is "Semantic Web is an extension of the existing World Wide Web".
+Which is basically true because instead of just having resources dispersed and looked through based on scoring algorithms that can link apples to computers, the Semantic Web goes beyond that by binding meaningful and human-readable context behind each unique resource.</br>
+Data and metadata of different resources are bound to one another forming a graph, backed by a structured framework that defines the concepts, entities, and relationships within a specific domain of knowledge: an ontology. This ensures that when we look through the graph we have a more specific and concise result.
 
 ## Why Web Semantic ?
 
@@ -67,7 +69,7 @@ By converting content into this structured format, the Publications Office ensur
 
 ## How is this structured ?
 
-It followed a FRBR model and its  WEMI hierarchy where a document (work) can have multiple translations (expressions), and each translation can have multiple formats (manifestation), and each format is linked to a binary file (item). At each level there was contextual metadata linking them with each other and other resources.
+It followed a FRBR model and its  WEMI hierarchy where a document (work) can have multiple translations (expression), and each translation can have multiple formats (manifestation), and each format is linked to a binary file (item). At each level there was contextual metadata linking them with each other and other resources.
 
 > FRBR (Functional Requirements for Bibliographic Records) is a conceptual entity-relationship model developed by the International Federation of Library Associations and Institutions (IFLA) in 1998. It is a foundational model for modern library cataloging, designed to restructure bibliographic databases to better reflect the conceptual structure of information resources and the needs of the user.
 Its main purpose is to help users find, identify, select, and obtain the information they need by clearly defining and distinguishing between the abstract content of a work and its physical manifestations.
@@ -86,7 +88,7 @@ Its main purpose is to help users find, identify, select, and obtain the informa
 Data refers to the raw facts and resources. It serves as the foundation for analysis and decision-making. </br>
 Metadata, on the other hand, is often described as “data about data”. </br>
 It provides context and meaning to data by describing its content, structure, origin, and purpose. </br></br>
-At the time I was involved data was stored in Fedora Commons (or Flexible Extensible Digital Object Repository Architecture).</br>
+At the time worked on the project CELLAR, data was stored in Fedora Commons (or Flexible Extensible Digital Object Repository Architecture).</br>
 A digital asset management (DAM) content repository architecture upon which institutional repositories, digital archives, and digital library systems might be built.</br></br>
 Metadata on the other hand was stored in the form of triples. For its storage, at the time I was involved there was a transition from Oracle RDF store to Virtuoso triple store.</br>
 
@@ -147,10 +149,10 @@ Have a look at the **publicly accessible** SPARQL endpoint for [OPOCE](https://o
 
 ## Milestones
 
-- Lead the migration from Jboss to Tomcat along with Atomikos and handled the JDK migration as well
+- Led the migration from Jboss to Tomcat along with Atomikos and handled the JDK migration as well
 - Participated in the call for tenders answering the questions about a potential migration from Oracle RDF store to an alternative framework. We won the contract and migrated to Virtuoso Triple store
 
 ## Potential references
 
-- main OP team : Marc KÜSTER (Head of IT at OP) and external consultants Patrick Gratz, Sebastien Thelen
-- main Arhs team: Davide Galina and Arnaud Koster
+- OP team@CELLAR : Marc KÜSTER (Head of IT at OP) and external consultants Patrick Gratz, Sebastien Thelen
+- Arhs team@CELLAR : Davide Galina, Arnaud Koster
