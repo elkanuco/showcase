@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="static/assets/css/styles.css" />
+</head>
+
+<body>
+    <div class="container-fluid d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="row w-100" style="height: 90vh; overflow: hidden;">
+            <div class="col-md-3 mb-4" style="height: 100%; display: flex; flex-direction: column;">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="searchInput"
+                        placeholder="Skills: maven,spring,angular,python,docker...">
+                </div>
+                <div class="container" style="height: 100%; overflow: auto;">
+                    <ul class="list-group" id="mainList">
+                        {% for skill_group, skills in cv_dict['skills'].items() %}
+                        <li class="list-group-item">
+                            <a data-toggle="collapse" href="#subList_{{ skill_group }}" aria-expanded="false"
+                                aria-controls="subList_{{ skill_group }}"
+                                class="d-block text-decoration-none category-link">
+                                <i class="fas fa-chevron-right mr-2"></i> {{ skills.label }}
+                            </a>
+                            <ul class="list-group list-group-flush collapse" id="subList_{{ skill_group }}">
+                                {% for skill in skills.list %}
+                                <li class="list-group-item subitem">{{skill}}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="maincontent col-md-9 mb-4" style="height: 100%; overflow: auto;">
+                <div class="timeline">
+                    {% for job in cv_dict['work_experience'] %}
+                    <div class="container {% if loop.index0 % 2 == 0 %}left{% else %}right{% endif %}">
+                        <div class="content hover-animated" role="button" data-toggle="modal"
+                            data-target="#jobModal_{{loop.index0}}" style="cursor:pointer;">
+                            <h3>{{ job.job_title }}</h3>
+                            <p>{{ job.company }}</p>
+                            <small>{{ job.start_date }} - {{ job.end_date }}</small>
+                            <p>{{ job.project_name }} </p>
+                        </div>
+
+                        <div class="modal fade" id="jobModal_{{loop.index0}}" tabindex="-1" role="dialog"
+                            aria-labelledby="jobModalLabel_{{loop.index0}}" aria-hidden="true">
+                            <div class="modal-dialog modal-lg" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="jobModalLabel_{{loop.index0}}">{{ job.job_title }} -
+                                            {{ job.company}}</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="company-description mb-3">
+                                            <p>{{ job.company_description }}</p>
+                                        </div>
+
+                                        <div class="project-description mb-3">
+                                            <h6>Project:</h6>
+                                            <p>{{ job.project_description }}</p>
+                                        </div>
+
+                                        <div class="responsibilities mb-3">
+                                            <h6>Responsibilities:</h6>
+                                            <ul>
+                                                {% for responsibility in job.responsibilities %}
+                                                <li>{{ responsibility }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+
+                                        <div class="technologies">
+                                            <h6>Technologies:</h6>
+                                            <p>{{ job.technologies }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div
+                        class="container {% if (cv_dict['work_experience']|length) % 2 == 0 %}left{% else %}right{% endif %}">
+                        <div class="content">
+                            <h3>{{ cv_dict['education'].degree }}</h3>
+                            <p>{{ cv_dict['education'].institution }}</p>
+                            <small>{{ cv_dict['education'].date }}</small>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $('#searchInput').on('keyup', function () {
+            var fullSearchTerm = $(this).val().toLowerCase().trim();
+            var searchTerms = fullSearchTerm.split(',').map(term => term.trim()).filter(term => term.length > 0);
+            $('.subitem').removeClass('highlight').show();
+            $('.list-group-item').show();
+            if (searchTerms.length === 0) {
+                $('.collapse').collapse('hide');
+                return;
+            }
+            let hasAnyMatch = false;
+            $('.list-group-item').each(function () {
+                var $categoryItem = $(this);
+                var $subitems = $categoryItem.find('.subitem');
+                var $collapsibleTarget = $categoryItem.find('.collapse');
+                let categoryHasMatch = false;
+                $subitems.each(function () {
+                    var $subitem = $(this);
+                    var subitemName = $subitem.text().toLowerCase();
+                    let itemMatches = false;
+                    for (const term of searchTerms) {
+                        if (subitemName.includes(term)) {
+                            itemMatches = true;
+                            break;
+                        }
+                    }
+                    if (itemMatches) {
+                        $subitem.addClass('highlight').show();
+                        categoryHasMatch = true;
+                    } else {
+                        $subitem.hide();
+                    }
+                });
+
+                if (categoryHasMatch) {
+                    $categoryItem.show();
+                    $collapsibleTarget.collapse('show');
+                    hasAnyMatch = true;
+                } else {
+                    $categoryItem.hide();
+                    $collapsibleTarget.collapse('hide');
+                }
+            });
+            if (!hasAnyMatch) {
+                $('.collapse').collapse('hide');
+            }
+        });
+    </script>
+</footer>
+
+</html>

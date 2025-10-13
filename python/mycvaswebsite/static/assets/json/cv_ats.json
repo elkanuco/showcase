@@ -1,0 +1,359 @@
+{
+
+    "personal_info": {
+    "full_name": "Daniel Mendes da Silva",
+    "job_title": "Software Engineer | Senior Java Full Stack Developer",
+    "place_of_birth": "Luanda, Angola",
+    "nationality": "Portugal",
+    "gender": "Male",
+    "linkedin": "linkedin.com/in/danielmendesdasilva"
+  }
+  ,"summary": "Full Stack Java Developer with + 15 years of experience in both backend and frontend development. Known for a strong work ethic, adaptability, and excellent interpersonal skills. Adept at working independently or with teams in fast-paced settings. Seeking a challenging role where I can leverage my expertise to drive innovative solutions and contribute to the success of the organization."
+  ,"skills": {  
+    "operating_systems": { "label": "OS", "list": ["Windows", "Ubuntu", "MacOS"]},
+    "ide": { "label": "IDE", "list":["Eclipse", "Intellij"]},
+    "source_control": { "label": "Source control", "list":["Git", "SVN"]},
+    "main_programming_languages": { "label": "Programming Languages", "list":["Java", "Python"]},
+    "web": { "label": "Web", "list":["HTML", "CSS", "JavaScript"]},
+    "file_formats": { "label": "File formats", "list":["JSON", "YAML", "XML", "XSD", "XSLT" ]},
+    "js_framework": { "label": "NodeJs Frameworks", "list":["Angular", "React", "Vue"]},
+    "java_frameworks_libraries": { "label": "Java Frameworks and Libraries", "list":["Spring", "Hibernate", "Struts", "Jooq", "CDI Weld", "JBPM", "Jasper", "iText", "POI", "GWT"]},
+    "db_relational": { "label": "Relational DBs", "list":["Oracle", "Postgres", "DB2"]},
+    "db_no_SQL": { "label": "NoSQL DBs", "list":["Redis"]},
+    "db_graph": { "label": "Graph DBs", "list":["AWS Neptune", "Neo4J"]},
+    "triple_stores": { "label": "Triple store DBs", "list":["Virtuoso", "Oracle RDF store"]},
+    "semantic_web": { "label": "Semantic Web", "list":["Sparql", "RDF", "OWL"]},
+    "db_versioning": { "label": "DB versioning", "list":["Liquibase", "Flyway"]},
+    "search_engines": { "label": "Search engines", "list":["ElasticSearch", "AWS OpenSearch"]},
+    "testing": { "label": "Testing tools", "list":["JUnit", "AssertJ", "Mockito", "Hamcrest", "RestAssured", "Testcontainers"]},
+    "container_orchestration": { "label": "Containers and Orchestration", "list":["Docker","Docker Compose","Docker Swarm","Kubernetes"]},
+    "code_coverage_vulnerability": { "label": "Code quality", "list":["SonarQube", "OWASP plugin"]},
+    "build_tools": { "label": "Build tools", "list":["Ant", "Maven", "Gradle"]},
+    "ci_cd_tools": { "label": "CI/CD tools", "list":["Hudson", "Jenkins", "GitLab CI", "AWS Code BuildPipeline"]},
+    "methodologies": { "label": "Methodologies", "list":["Waterfall", "Scrum", "Kanban"]},
+    "organisational_tools": { "label": "Organisational tools", "list":["Jira", "Confluence", "Office", "Teams", "Slack", "Outlook"]},
+    "application_servers": { "label": "Application Servers", "list":["JBoss", "Tomcat", "Websphere"]},
+    "cms": { "label": "Content Management tools", "list":["Liferay", "Joomla"]},
+    "cloud": { "label": "Cloud", "list":["AWS CodeCommit", "CloudWatch", "StepFunctions", "Lambdas", "SQS", "Cognito", "Neptune", "S3", "EC2"]}
+  }
+  
+,"education": 
+    {
+     "degree": "Master’s in Electrical and Computers Engineering",
+    "institution": "University Nova of Lisbon, Portugal",
+    "date": "November 2007",
+    "major": "Telecommunications",
+    "dissertation": "Distributed wireless sensor network management system",
+    "summary": "The dissertation integrated a group of 5 theses that aimed to develop a wireless sensor network accessed through a mobile ad-hoc network of patrol nodes and managed through a distributed system of portals. The role of my thesis was the development of the distributed system of Web portals that gave access to a user over the dispersed wireless sensor network. It addressed issues like mobility, data acquisition and persistence, messages exchange, and the integration of web technology with message-based middleware. This thesis approached the development over a J2EE platform, following the classical three-layer approach. It defined a portal hierarchy, enabling the existence of a central main portal, and several operational portals running on desktop PCs, laptops, PDAs. It proposed a model of eventual consistency to allow the geographical and functional distribution of WSN applications control. The thesis development emphasized the technology integration aspects, including patrol node intermittent communication, and the graphical presentation of the data collected from the sensors, using graphics and Google Maps API. All implementation was based on open-source technology, using XML/SOAP with Java tools for Web services, implementing a distributed messaging. My studies covered also other areas like: IT/ICT, Electronics, Digital systems, Robotics, Control and Decision"
+
+    }
+    ,"languages": [
+    {
+      "language": "Portuguese",
+      "proficiency": "Native"
+    },
+    {
+      "language": "English",
+      "proficiency": "Proficient"
+    },
+    {
+      "language": "French",
+      "proficiency": "Proficient"
+    },
+    {
+      "language": "German",
+      "proficiency": "Beginner"
+    },
+    {
+      "language": "Luxembourgish",
+      "proficiency": "Beginner"
+    }
+  ]
+  ,"certifications_trainings": [
+    {
+      "title": "Unix, Docker, GitOps, Kubernetes",
+      "location": "Digital Learning Hub at Belval",
+      "date": "October 2025"
+    },
+    {
+      "title": "Python",
+      "location": "Udemy",
+      "date": "September 2025"
+    },
+    {
+      "title": "ITIL 4 Foundation",
+      "location": "Luxembourg",
+      "date": "July 2025"
+    },
+    {
+      "title": "Docker",
+      "location": "Udemy",
+      "date": "April 2025"
+    },
+    {
+      "title": "Professional Scrum Master I (PSM I)",
+      "location": "Luxembourg",
+      "date": "April 2025"
+    },
+    {
+      "title": "Sun Certified Programmer for Java 6",
+      "location": "Luxembourg",
+      "date": "April 2010"
+    },
+    {
+      "title": "Core Spring 2.5 training",
+      "location": "Luxembourg",
+      "date": "May 2009"
+    }
+  ]
+  ,"main_tasks": [
+        "Collaborated closely with team members to keep track and meet anticipated deadlines",
+        "Managed both back-end and front-end aspects of the development process",
+        "Followed best practices and design principles such as SOLID, YAGNI, KISS, DRY, etc.",
+        "Identified issues, analyzed solutions and implemented optimizations",
+        "Analyzed user needs and software requirements to determine design feasibility",
+        "Reviewed project documentation, documented technical specifications",
+        "Written tests, performed code reviews and peer programming",
+        "Assisted other developers with coding, troubleshooting and debugging",
+        "Coordinated with project managers, product owners, stakeholders, quality assurance team to meet development timelines and testing plan"
+    ]
+    ,"experience_overview": [
+        "October 2020 - Juin 2025 Full Stack Developer at Seqvoia (Avanterra), Luxembourg",
+        "December 2012 - October 2020 Senior Analyst Programmer at Arηs (Cube, Spikeseed), Luxembourg",
+        "March 2011 - December 2012 Software Engineer at P&T Consulting (POST), Luxembourg",
+        "August 2010 - March 2011 Software Engineer at One Tree Technologies, Luxembourg",
+        "February 2008 - August 2010 Junior Project Engineer at BSB (Vermeg), Luxembourg"
+    ]
+    , "work_experience": [
+
+        {
+            "start_date": "October 2020",
+            "end_date": "June 2025",
+            "job_title": "Full Stack Developer",
+            "company": "Seqvoia (Avanterra)",
+            "location": "Luxembourg",
+            "company_description": "Seqvoia, now rebranded as Avanterra, is a fintech company. Specializing in data technology solutions tailored for the asset management industry. Avanterra offers end-to-end systems that support the management, operation, and dissemination of data for asset managers and servicers.",
+            "project_name": "AvData",
+            "project_description": "AvData was a project aiming to help wealth management companies to consolidate metadata about their different financial instruments, perform quick searches, expose different APIs to disseminate and extract data and reports.",
+            "responsibilities": [
+                "Worked closely with the product owner, quality assurance analysts and developers following Scrum methodologies to achieve requirements",
+                "Improved the performance on SQL queries",
+                "Led the refactoring of the report generation, migrating the logic from the frontend into backend services and exposed via a REST API",
+                "Led the implementation of custom reports generation that extracted data with Gremlin queries using TinkerPop library over AWS Neptune graph database and created CSV and DOCX files using Apache Commons CSV and POI libraries",
+                "Participated in the implementation of different view components used across the application",
+                "Participated in the refactoring of the ETL mechanism implemented using AWS Step Functions, AWS SQS, AWS Lambdas written in both python and NodeJS",
+                "Improved the performance on the rendering of some pages",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance",
+                "Code review"
+            ],
+            "technologies": "Maven, Gradle, Java, Python, Spring boot, Hibernate, Angular, Postgres, Liquibase, AWS Neptune graph store, AWS Cognito, Git, AWS Code-commit and code pipeline for the CI/CD, AWS Step Functions, AWS SQS, AWS Lambdas, AWS EC2, NodeJS, Windows, Unix, HTML, CSS, JavaScript, IntelliJ"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems. Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "Ingenico",
+            "client_description": "Ingenico Group is a company providing payment services. Its mission is to provide merchants with a comprehensive and innovative range of services and solutions that eliminate payment complexity and make purchasing quick, seamless and secure for consumers, whatever the sales channel or payment method.",
+            "project_name": "Acquirer Hub",
+            "project_description": "The Acquirer Hub project for Ingenico is a comprehensive, scalable payment platform designed to centralize and enhance payment services for acquirers, independent service providers (ISVs), and merchants. This platform allows acquirers to offer a broad range of payment methods and services through a single integration point, improving operational efficiency and reducing complexity. The Acquirer Hub project consists in providing a common API to contact the various acquirers (i.e. the banks of the merchants). It is used by the different services of Ingenico Group and considered as the new generation platform to connect to acquirers. The target is to have connections to around 40 acquirers using that common API. It is the target platform to connect new acquirers for all Ingenico entities. Existing connections are progressively migrated to Acquirer Hub as well. The system follows a micro-service architecture, using an internal framework. The connection to the acquirers is realized through different protocols: ISO8583 binary protocol, HTTP , etc. The messaging can be through both synchronous and asynchronous messages, with a persistence layer based on Cassandra. A queuing for the feedback platform with Apache Kafka. A file storage using Amazon S3 API (Minio implementation). An encryption using HSM (Hardware Security Module).All the services are released and deployed in an automated way. The configuration and deployment is automated using Puppet and Hiera. The workflow to promote versions from one environment to another one until production is based on GOCD. Monitoring of the services is mainly done using ELK stack in combination with Grafana and Graphite. Alerting is based on Icinga. Machine provisioning is based on Foreman. The project is implemented with high security standards, and it fits within the scope of PCI-DSS regulations. The project follows an agile approach, based on SCRUM.A release is shipped to production after each Sprint review using canary deployment strategy. Each release contains 18 different services deployed on 72 VMs.",
+            "responsibilities": [
+                "Worked closely with the delivery manager and developers following Scrum methodologies to achieve requirements",
+                "Led the implementation, under the supervision of a lead developer, of the service that managed transactions from Bambora, a merchant acquirer and payments service provider offering a comprehensive API based via HTTP protocol",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance",
+                "Code review"
+            ],
+            "technologies": "a J2EE based in-house developed framework, CDI Weld, micro-service architecture, MacOS, Unix, IntelliJ, Slack, Jira, Confluence"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems. Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "Attestor Capital LLP",
+            "client_description": "Attestor is a company that provides wealth management services. They offer financial planning and investment advisory services. Attestor Capital serves customers in the United Kingdom.",
+            "project_name": "PMS",
+            "project_description": "PMS a Portfolio Management System was developed for an investment fund, supposed to support its broad investment portfolio – incl. but not limited to claims, bonds, equities, and fx hedges. The high-level purpose of such a system is to record all investment positions, and calculate outputs required to monitor the portfolio such as expected cash flows, profit & loss, and exposure per position as well as communicate with third parties responsible for reporting, reconciliation and other purposes, e.g. Bloomberg, Citco, etc.",
+            "responsibilities": [
+                "Worked closely with the delivery manager and developers following Scrum methodologies to achieve requirements",
+                "Led the implementation of the asynchronous task management service responsible for the execution of all background tasks including the update of the exchange rates via a Bloomberg service and consecutive price update task on all positions linked to every currency",
+                "Led the implementation of the reconciliation view and service where the different valuation units recorded in the system were compared with the reports provided by the different custodians shared over FTP",
+                "Implemented the script used in the GitLab CI/CD pipeline that parsed the output of the OWASP plugin to issue warnings in case a vulnerability was detected",
+                "General implementation of views, components and services specified by the product owner under the supervision of the delivery manager",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance",
+                "Code review"
+            ],
+            "technologies": "Java, Spring Boot, Angular 7+, PostgreSQL, Flyway, jOOQ, JWT, Docker, deployed on Amazon Web Services using ElasticBeanstalk, GitLab for the CI/CD, JUnit, Mockito, Selenide, Clover, PIT mutation coverage, Sonar, Ng-Lint, OWASP dependency check, Ubuntu, IntelliJ, Jira, Confluence"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems.Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "OPOCE",
+            "client_description": "Publications Office of the European Union, OP is “an inter-institutional body, and functions under the auspices of the European Commission. It is governed by a Management Committee, on which each institution is represented by its Secretary-General. In order to bring information to the citizen, the Publications Office cooperates with the EU institutions, agencies and bodies to further enhance the transparency of the legislative process and of European policies and to facilitate access to European legislation and information published in the L (Legislation), C (Information and Notices) and S (Public procurement) series of the Official Journal and on the related EUR-Lex and TED websites. The citizen has access to European Publications through the EU Bookshop and contact information for EU Officials can be found via EU “Whoiswho”, the official directory of the European Union.”",
+            "project_name": "eTendering",
+            "project_description": "The eTendering system for OPOCE (Publications Office of the European Union) is an electronic platform designed to manage public procurement procedures for the EU institutions and bodies. It facilitates the publication, submission, and processing of electronic tenders, replacing traditional paper-based tendering processes with a more transparent, efficient, and secure digital workflow. eTendering website is part of a bundle of services that exist to give the public greater access to information about public tenders in the European Union, as well as to improve the management of the public procurement procedures.",
+            "responsibilities": [
+                "Replaced lead developer and worked under the supervision of the project manager to achieve requirements",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance"
+            ],
+            "technologies": "Java, Spring, Hibernate, Weblogic, JSP, Javascript, HTML, CSS, Freemarker, Oracle, Webservices, JMX, Ubuntu, Unix, Maven, IntelliJ, Git"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems.Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "OPOCE",
+            "client_description": "Publications Office of the European Union, OP is “an inter-institutional body, and functions under the auspices of the European Commission. It is governed by a Management Committee, on which each institution is represented by its Secretary-General. In order to bring information to the citizen, the Publications Office cooperates with the EU institutions, agencies and bodies to further enhance the transparency of the legislative process and of European policies and to facilitate access to European legislation and information published in the L (Legislation), C (Information and Notices) and S (Public procurement) series of the Official Journal and on the related EUR-Lex and TED websites. The citizen has access to European Publications through the EU Bookshop and contact information for EU Officials can be found via EU “Whoiswho”, the official directory of the European Union.”",
+            "project_name": "OP Portal Search System",
+            "project_description": "The OP Portal Search System is an online search platform developed by the Publications Office of the European Union (OPOCE). It provides users with access to a vast range of EU general publications, legal documents, data, and metadata stored in the EU’s digital repository, CELLAR. The Search Layer designed for the Publications Office (OP) to be used as the single interface to access all content (data and metadata) stored and managed by the Publications Office. Basically, OPPSS provides an interface for the indexation and multilingual search of the content published by OP.",
+            "responsibilities": [
+                "Worked closely with the delivery manager and lead developer to achieve requirements",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance"
+            ],
+            "technologies": "Java, Spring XD, Spring boot, XML, RDF, SPARQL, Freemarker, Groovy, Elasticsearch, Docker, Maven, IntelliJ, Git, Jira, Confluence, Ubuntu, Unix, Jenkins"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems.Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "OPOCE",
+            "client_description": "Publications Office of the European Union, OP is “an inter-institutional body, and functions under the auspices of the European Commission. It is governed by a Management Committee, on which each institution is represented by its Secretary-General. In order to bring information to the citizen, the Publications Office cooperates with the EU institutions, agencies and bodies to further enhance the transparency of the legislative process and of European policies and to facilitate access to European legislation and information published in the L (Legislation), C (Information and Notices) and S (Public procurement) series of the Official Journal and on the related EUR-Lex and TED websites. The citizen has access to European Publications through the EU Bookshop and contact information for EU Officials can be found via EU “Whoiswho”, the official directory of the European Union.”",
+            "project_name": "CELLAR",
+            "project_description": "CELLAR is the common digital repository of the Publications Office of the European Union (OPOCE) designed for the storage, management, and dissemination of official EU publications and their metadata. It serves as a centralized archive, storing multilingual publications and metadata, and provides access for both humans and machines using semantic web technologies. CELLAR is the common repository for all public websites of the Publications Office having as objective to provide the content to the different portals of the Publications Office including EUR-Lex, TED, CORDIS and EU bookshop. CELLAR can be seen as a FRBR (Functional Requirements for Bibliographic Records) system, based on RDF (Resource Description Framework) a metadata data model. Basically, a repository of documents and associated meta-data. It's part of a whole integration system that manages the distribution of legal document publications throughout official European entities and services. Destined for the OPOCE ,the Office for Official Publications of the European Communities, the publishing house of the institutions and other bodies of the European Union.",
+            "responsibilities": [
+                "Worked closely with the delivery manager and lead developer to achieve requirements",
+                "I led the migration of JDK (Java 6 at the time)",
+                "I led the migration from Jboss to Tomcat application server with Atomikos for the distributed transaction management",
+                "I participated on the call for tenders that won the renovation of a multi-year contract, answering the technical questions that led to the migration from Oracle RDF store towards Virtuoso triple store",
+                "When the delivery manager was transitioning to Scrum Master and the lead developer was transitioning to delivery manager, I took lead on the developments and managed exchanges with the product owner and business analysts at OPOCE",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement General corrective and evolutive maintenance"
+            ],
+            "technologies": "Java, Oracle relational database, Oracle RDF Store, Spring, Hibernate, Jboss, HTML, CSS, Javascript, JQuery, Maven, XML, XSLT, XSD, SVN, Git, Semantic Web, RDF, SKOS, SPARQL, Virtuoso triple store, Tomcat, Atomikos, Fedora Commons, Windows, Eclipse, Unix, Jenkins"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems.Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "OPOCE",
+            "client_description": "Publications Office of the European Union, OP is “an inter-institutional body, and functions under the auspices of the European Commission. It is governed by a Management Committee, on which each institution is represented by its Secretary-General. In order to bring information to the citizen, the Publications Office cooperates with the EU institutions, agencies and bodies to further enhance the transparency of the legislative process and of European policies and to facilitate access to European legislation and information published in the L (Legislation), C (Information and Notices) and S (Public procurement) series of the Official Journal and on the related EUR-Lex and TED websites. The citizen has access to European Publications through the EU Bookshop and contact information for EU Officials can be found via EU “Whoiswho”, the official directory of the European Union.”",
+            "project_name": "new.CERES",
+            "project_description": "The new.CERES (Common Electronic REception System) is a project associated with OPOCE (Office for the Publication of Official Publications of the European Communities). It is designed as an electronic reception system to digitize and automate the reception and handling of official publications and documents within the EU institutions and bodies. The system aims to streamline the process of receiving, managing, and distributing official documents electronically, replacing traditional paper-based workflows. It supports secure check-in, digital document handling, visitor or document tracking, and provides a standardized platform to improve operational efficiency and compliance with EU regulations on official publications. As part of an integrated framework for managing electronic reception, standardization, and archival of official EU documents and publications new.CERES serves as the front-end electronic reception gateway, METACONV ensures metadata standardization and conversion, SYBORG manages the data flow and synchronization, and CELLAR stores and preserves the publications and records securely.",
+            "responsibilities": [
+                "Worked closely with the delivery manager, developers following Scrum methodologies to achieve requirements",
+                "Implementation of ingestion flows specific to the different sets of METS (Metadata Encoding and Transmission Standard) and IMMC (Interinstitutional Metadata Maintenance Committee) packages",
+                "Implementation of the main technical UI page, specified by the product owner and used internally only to oversee the status of the different ingestion flows",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance"
+            ],
+            "technologies": "Java, Spring, Hibernate, Oracle, Jboss, Jbpm, HTML, CSS, Javascript, JQuery, Maven, Windows, Eclipse , SVN , Jenkins"
+        },
+        {
+            "start_date": "December 2012",
+            "end_date": "October 2020",
+            "job_title": "Senior Analyst Programmer",
+            "company": "Arηs (Cube, Spikeseed)",
+            "location": "Luxembourg",
+            "company_description": "Arhs Group is a Luxembourg-founded, independent group of companies specializing in managing complex IT projects and systems.Established in 2003, Arhs has grown organically to encompass about 16 entities worldwide.",
+            "client": "OPOCE",
+            "client_description": "Publications Office of the European Union, OP is “an inter-institutional body, and functions under the auspices of the European Commission. It is governed by a Management Committee, on which each institution is represented by its Secretary-General. In order to bring information to the citizen, the Publications Office cooperates with the EU institutions, agencies and bodies to further enhance the transparency of the legislative process and of European policies and to facilitate access to European legislation and information published in the L (Legislation), C (Information and Notices) and S (Public procurement) series of the Official Journal and on the related EUR-Lex and TED websites. The citizen has access to European Publications through the EU Bookshop and contact information for EU Officials can be found via EU “Whoiswho”, the official directory of the European Union.”",
+            "project_name": "SYBORG",
+            "project_description": "SYBORG (SYnchronized Buffered ORGanizer) is a standalone Java application developed as an integration chain designed to receive and process data packages created by CERES (Common European Registry for Enforcement Sources). It was a project under OPOCE (Office for the Publication of Official Publications of the European Communities), aiming to facilitate the harmonization and standardized exchange of enforcement-related data across EU member states. This application acts as a buffered organizer that synchronizes incoming data streams to ensure orderly processing and integration within the broader system of cross-border enforcement information exchange. It supports interoperability and seamless data integration necessary for EU-wide legal and administrative enforcement cooperation.",
+            "responsibilities": [
+                "I took over as lead developer, working under the supervision of a delivery manager",
+                "SYBORG was an in-memory standalone application I refactored the application migrated towards a stateful, persistent, enterprise-grade architecture integrating solutions such as an Oracle database, Spring and Hibernate frameworks",
+                "Worked closely with the delivery manager to achieve requirements",
+                "Participated in the writing, review and preparation of the deliverables for each release",
+                "General code refactoring and improvement",
+                "General corrective and evolutive maintenance"
+            ],
+            "technologies": "Java, Spring, Hibernate, Oracle, Jboss, Jbpm, Maven, Windows, Eclipse, SVN"
+        },
+        {
+            "start_date": "March 2011",
+            "end_date": "December 2012",
+            "job_title": "Software Engineer",
+            "company": "P&T Consulting (POST)",
+            "location": "Luxembourg",
+            "company_description": "P&T Consulting in Luxembourg was an information technology and services company with around 11-50 employees. It offered innovative ICT solutions and consultancy services targeting both business and governmental customers in Luxembourg and Europe. P&T Consulting was associated with the P&T Group, the leading postal and telecommunications service provider in Luxembourg",
+            "project_name": "eServices",
+            "project_description": "The main project I was involved in was the eServices project was a suite of digital services that included MengPost, which is an online stamps and personalized cards service. MengPost allowed customers to order, pay for, and print postage stamps online through the eservices.lu platform. This digital initiative was part of modernizing postal and digital services to enhance user convenience and self-service options.",
+            "responsibilities": [
+                "Participated in the implementation of MengPost",
+                "Worked closely with the lead developers and project managers to achieve requirements",
+                "General code refactoring and improvement across the different applications maintained by P&T Consulting for mainly clients such as P&T, Ville de Luxembourg and the Grand Ducal Police",
+                "General corrective and evolutive maintenance of the eServices platform and other applications such as sms4Ticket, POST Luxembourg’s eTendering platform, etc."
+            ],
+            "technologies": "Ubuntu, Eclipe, Maven, Java, Spring WebFlow, Spring MVC, JPA,  Hibernate, Liferay, Jahia, Tomcat, JBoss, Websphere, Geronimo, Jetty, JavaScript, Jquery, HTML, CSS, JSP, AJAX, XML, XSD, XSLT, LiquiBase, Jasper Reports, Tapestry, JUnit, Selenium,Firefox, FireBug, Firepath, Firecookies, Oracle, MySQL, PostgreSQL, SVN, Hudson, Nexus, RPM, SCRUM, Mantis, Xwiki, Agilefant, Alfresco , DotProject, Outlook & ThunderBird ,etc"
+        },
+        {
+            "start_date": "August 2010",
+            "end_date": "March 2011",
+            "job_title": "Software Engineer",
+            "company": "One Tree Technologies",
+            "location": "Luxembourg",
+            "company_description": "OneTree Technologies was a Luxembourg-based company specializing in business and IT solutions, including VAT refund systems. They developed two notable projects related to VAT refund between entities.",
+            "project_name": "VATLux & VRCA",
+            "project_description": "VATLux: This was a VAT refund system implemented for Luxembourg's tax administration to comply with the EU directive 2008/9/EC. It automated and managed VAT refund procedures as mandated by the EU, facilitating refund claims processing and administration. VRCA (VAT Refund Core Asset): A pan-European software solution enabling EU Member States to comply with the VAT refund directive by fully automating VAT refund procedures. VRCA was designed to be deployed on January 1, 2010, the deadline for countries to have compliant VAT refund systems. This solution enabled the Dutch Tax Administration to manage VAT refund claims in line with the EU directive 2008/9/EC, supporting the administration in handling refunds between entities in different EU countries and streamlining the refund process digitally. It allowed processing of VAT refund claims from both local and foreign established companies and helped manage EU certification for national VAT refund systems.",
+            "responsibilities": [
+                "Enhanced front-end performance through server-side pagination integrated on numerous tables across the application, reducing load times for table-heavy views.",
+                "Contributed to the full development cycle of different features added to both projects VATLux and VRCA",
+                "Worked closely with the lead developers and project managers to achieve requirements",
+                "General code refactoring and improvement"
+            ],
+            "technologies": "IBM WebSphere Application Server, Rational Application Developer, Struts 1.x, JSP, HTM, CSS JQuery, JavaScript, Java, Hibernate, Spring, XML, XSLT, XSD, IBM DB2, SVN, Selenium, Molybdenum, Firebug, Ubuntu and Eclipse"
+        },
+        {
+            "start_date": "February 2008",
+            "end_date": "August 2010",
+            "job_title": "Junior Project Engineer",
+            "company": "BSB (Vermeg)",
+            "location": "Luxembourg",
+            "company_description": "BSB (Business Solutions Builders now known as Vermeg) BSB is a company with a presence in Luxembourg, known for delivering software solutions primarily for the life and health insurance sector, as well as asset and wealth management. It is now part of Vermeg, a software group that provides IT solutions across several financial services domains.",
+            "project_name": "Solife",
+            "project_description": "BSB's flagship product is \"Solife,\" which is a life insurance administration system used by various financial institutions. Solife supports life, pension, and healthcare policy administration, and is recognized for its robust functionality and technological edge in the European market.",
+            "responsibilities": [
+                "Executed project phases in alignment with the company's Waterfall methodology, ensuring timely delivery and adherence to predefined milestones.",
+                "As part of the \"software factory\" I contributed to the full development cycle of different features added to Solife system",
+                "Worked closely with the business analysts, integration team, and managers to achieve results",
+                "General corrective and evolutive maintenance of the main application across all features",
+                "Support via phone or Jira platforms"
+            ],
+            "technologies": "JF \"Java framework\" (an in-house developed framework), Oracle, Maven, Jasper reports, XML, XSD, XSLT and JRXML, JBoss, CVS and SVN, Hudson, Windows and Eclipse"
+        }
+
+
+
+
+
+    ]
+
+
+    
+}
