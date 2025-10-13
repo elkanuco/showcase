@@ -17,7 +17,7 @@
 ## Tools
 
 - Python
-- PyCharm Integrated Development Environment
+- PyCharm Integrated Development Environment or Visual Studio Code
 - Git Bash or WSL or any other Unix-like terminal
 - Web browser
 - <https://www.pythonanywhere.com>
