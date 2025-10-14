@@ -5,12 +5,14 @@
 > [OPOCE](https://op.europa.eu/en/) exposes the endpoint <https://publications.europa.eu/webapi/rdf/sparql>
 >
 > Useful references:
-> - https://op.europa.eu/en/advanced-sparql-query-editor
-> - https://op.europa.eu/en/web/cellar/cellar-data/metadata/knowledge-graph
+>
+> - <https://op.europa.eu/en/advanced-sparql-query-editor>
+> - <https://op.europa.eu/en/web/cellar/cellar-data/metadata/knowledge-graph>
 >
 > Example of services using CELLAR:
->  - [EUR-LEX](https://eur-lex.europa.eu/content/help/data-reuse/reuse-contents-eurlex-details.html)
->  - [OP Portal Search](https://op.europa.eu/en/web/about-us/legal-notices/publications-office-of-the-european-union)
+>
+> - [EUR-LEX](https://eur-lex.europa.eu/content/help/data-reuse/reuse-contents-eurlex-details.html)
+> - [OP Portal Search](https://op.europa.eu/en/web/about-us/legal-notices/publications-office-of-the-european-union)
 >
 
 Play with it
