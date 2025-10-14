@@ -4,7 +4,7 @@
     .wrap { color: #ffffff; font-family: Arial; font-size: 24px;text-align: center; overflow-wrap: break-word; }
   </ns0:style>
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">A gentleman accepts the responsibility of his actions and bears the burden of their consequences.</html:div>
+    <html:div class="wrap" id="quote">The secret of happiness is not in doing what you like but in liking what you have to do.</html:div>
   </ns0:foreignObject>
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; William Faulkner</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; Sathya Sai Baba</ns0:text>
 </ns0:svg>
