@@ -13,8 +13,6 @@
 >  - [OP Portal Search](https://op.europa.eu/en/web/about-us/legal-notices/publications-office-of-the-european-union)
 >
 
-</br
-
 Play with it
 
 ``` sql
