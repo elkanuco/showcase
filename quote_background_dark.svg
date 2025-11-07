@@ -4,7 +4,7 @@
     .wrap { color: #ffffff; font-family: Arial; font-size: 24px;text-align: center; overflow-wrap: break-word; }
   </ns0:style>
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">The biggest and only critic lives in your perception of people's perception of you rather than people's perception of you.</html:div>
+    <html:div class="wrap" id="quote">The wise speak only of what they know.</html:div>
   </ns0:foreignObject>
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; Criss Jami</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; J.R.R. Tolkien</ns0:text>
 </ns0:svg>
