@@ -62,4 +62,4 @@ Once deployed the application should load app data per projects in the cache and
 ## TL;DR
 
 | [DB](./docs/DB.md)|[websockets](./docs/websockets.md)|[kafka](./docs/kafka.md)|[redis](./docs/redis.md)
-|--------|--------|--------
+|--------|--------|--------|--------
