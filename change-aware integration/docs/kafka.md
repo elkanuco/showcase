@@ -52,3 +52,6 @@ Kafka allows decoupling of data producers and consumers, supporting a wide range
 | Use Cases                   | Messaging, event sourcing, real-time analytics, pipelines|
 
 ---
+
+| [Back](../README.md)|
+|--------|
