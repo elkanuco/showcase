@@ -19,7 +19,7 @@ While Redis is memory-based, it offers configurable persistence through snapshot
 Redis supports high availability with Redis Sentinel for automatic failover and monitoring. Redis Cluster allows data sharding across multiple nodes, scaling horizontally while maintaining performance and fault tolerance.
 
 ### 5. Pub/Sub Messaging
-Redis provides a publish/subscribe messaging paradigm that enables real-time messaging, useful for live chat, notifications, and event broadcasting [web:11].
+Redis provides a publish/subscribe messaging paradigm that enables real-time messaging, useful for live chat, notifications, and event broadcasting.
 
 ### 6. Lightweight and Simple to Use
 Redis has a straightforward protocol with many client libraries available across programming languages, making it easy to integrate into applications.
