@@ -1,0 +1,27 @@
+[Unit]
+Description=Spring Boot Demo Application
+After=network.target
+
+[Service]
+Type=simple
+User=springboot
+Group=springboot
+WorkingDirectory=/opt/spring-boot-app
+Environment="JAVA_HOME=/opt/java" 
+Environment="DB_PASSWORD=password"
+ExecStart=/usr/bin/java -jar /opt/spring-boot-app/spring-boot-app-*.jar --spring.config.location=file:/opt/spring-boot-app/config/application.properties
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+
+# Logging
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=spring-boot-app
+
+# Security
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

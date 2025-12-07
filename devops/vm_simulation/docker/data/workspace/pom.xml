@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>lu.elkanuco</groupId>
+	<artifactId>parent-wrapper</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+
+	<name>parent-wrapper</name>
+	<modules>
+		<module>spring-boot-app</module>
+		<module>deployment</module>
+	</modules>
+
+
+	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Nexus Release Repository</name>
+			<url>http://nexus:8081/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Nexus Snapshot Repository</name>
+			<url>http://nexus:8081/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<scm>
+		<connection>scm:git:http://gitlab/root/spring-boot-app.git</connection>
+		<developerConnection>scm:git:http://gitlab/root/spring-boot-app.git</developerConnection>
+		<url>http://gitlab/root/spring-boot-app</url>
+		<tag>HEAD</tag>
+	</scm>
+
+</project>

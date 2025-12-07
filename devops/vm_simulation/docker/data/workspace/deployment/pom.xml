@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>lu.elkanuco</groupId>
+    <artifactId>spring-boot-app-deployment</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>rpm</packaging>
+
+    <name>Spring Boot App RPM Package</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <app.jar.version>0.0.1-SNAPSHOT</app.jar.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>rpm-maven-plugin</artifactId>
+                <version>2.2.0</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <name>spring-boot-app</name>
+                    <version>${project.version}</version>
+                    <group>Applications/Internet</group>
+                    <packager>DevOps Team</packager>
+                    <description>Spring Boot Demo Application</description>
+                    <license>Proprietary</license>
+                    <prefix>/opt/spring-boot-app</prefix>
+
+                    <requires>
+                        <require>java-11-openjdk</require>
+                    </requires>
+
+                    <mappings>
+                        <!-- Application JAR -->
+                        <mapping>
+                            <directory>/opt/spring-boot-app</directory>
+                            <filemode>644</filemode>
+                            <username>springboot</username>
+                            <groupname>springboot</groupname>
+                            <dependency>
+                                <includes>
+                                    <include>lu.elkanuco:spring-boot-app</include>
+                                </includes>
+                            </dependency>
+                        </mapping>
+
+                        <!-- Configuration file -->
+                        <mapping>
+                            <directory>/opt/spring-boot-app/config</directory>
+                            <filemode>644</filemode>
+                            <username>springboot</username>
+                            <groupname>springboot</groupname>
+                            <sources>
+                                <source>
+                                    <location>src/main/resources/application-template.properties</location>
+                                    <destination>application.properties</destination>
+                                </source>
+                            </sources>
+                            <configuration>true</configuration>
+                        </mapping>
+
+                        <!-- Scripts -->
+                        <mapping>
+                            <directory>/opt/spring-boot-app/bin</directory>
+                            <filemode>755</filemode>
+                            <username>springboot</username>
+                            <groupname>springboot</groupname>
+                            <sources>
+                                <source>
+                                    <location>src/main/scripts</location>
+                                    <includes>
+                                        <include>*.sh</include>
+                                    </includes>
+                                </source>
+                            </sources>
+                        </mapping>
+
+                        <!-- Logs directory -->
+                        <mapping>
+                            <directory>/var/log/spring-boot-app</directory>
+                            <filemode>755</filemode>
+                            <username>springboot</username>
+                            <groupname>springboot</groupname>
+                        </mapping>
+
+                        <!-- Systemd service -->
+
+                        <mapping>
+                            <directory>/etc/systemd/system</directory>
+                            <filemode>644</filemode>
+                            <username>root</username>
+                            <groupname>root</groupname>
+                            <sources>
+                                <source>
+                                    <location>src/main/resources/spring-boot-app.service</location>
+                                    <!-- SPECIFY FILENAME to avoid directory ownership conflict -->
+                                    <destination>spring-boot-app.service</destination>
+                                </source>
+                            </sources>
+                            <!-- directoryIncluded=false prevents directory ownership claim -->
+                            <directoryIncluded>false</directoryIncluded>
+                            <configuration>noreplace</configuration>
+                        </mapping>
+
+                        <!-- Logs directory -->
+                        <mapping>
+                            <directory>/var/log/spring-boot-app</directory>
+                            <filemode>755</filemode>
+                            <username>springboot</username>
+                            <groupname>springboot</groupname>
+                        </mapping>
+                    </mappings>
+
+                    <!-- Pre-installation script -->
+                    <preinstallScriptlet>
+                        <script>
+                            <![CDATA[
+                            # Create user if not exists
+                            if ! id -u springboot > /dev/null 2>&1; then
+                                useradd -r -s /bin/false -d /opt/spring-boot-app springboot
+                                echo "Created springboot user"
+                            fi
+                            
+                            # Stop service if running
+                            if systemctl is-active --quiet spring-boot-app 2>/dev/null; then
+                                systemctl stop spring-boot-app
+                            fi
+                            ]]>
+                        </script>
+                    </preinstallScriptlet>
+
+
+                    <!-- Post-installation script -->
+                    <postinstallScriptlet>
+                        <script>
+                            <![CDATA[
+                            # Set ownership
+                            chown -R springboot:springboot /opt/spring-boot-app
+                            chown -R springboot:springboot /var/log/spring-boot-app
+
+                            # Reload systemd
+                            systemctl daemon-reload
+                            systemctl enable spring-boot-app.service
+
+                            echo "============================================"
+                            echo "Spring Boot App installed successfully!"
+                            echo "============================================"
+                            echo "Configure: /opt/spring-boot-app/config/application.properties"
+                            echo "Start: systemctl start spring-boot-app"
+                            echo "Status: systemctl status spring-boot-app"
+                            echo "Logs: journalctl -u spring-boot-app -f"
+                            echo "============================================"
+                            ]]>
+                        </script>
+                    </postinstallScriptlet>
+
+                    <!-- Pre-uninstall script -->
+                    <preremoveScriptlet>
+                        <script>
+                            <![CDATA[
+                            if systemctl is-active --quiet spring-boot-app 2>/dev/null; then
+                            systemctl stop spring-boot-app
+                            fi
+                            systemctl disable spring-boot-app.service 2>/dev/null || true
+                            ]]>
+                        </script>
+                    </preremoveScriptlet>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>lu.elkanuco</groupId>
+            <artifactId>spring-boot-app</artifactId>
+            <version>${app.jar.version}</version>
+        </dependency>
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>nexus-releases</id>
+            <url>http://nexus:8081/repository/rpm-releases/</url>
+        </repository>
+    </distributionManagement>
+</project>
