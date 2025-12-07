@@ -15,7 +15,11 @@ More work more fun ? In fact working with VM's instantiated from on premises bar
 
 ## How does this work?
 
-I am happy I had that experience a few years back at P&T Consulting a Luxembourg-based information and communications technology consulting firm specializing in digital solutions. It was majority-owned by POST Luxembourg. I think it no longer exists as it was completely absorbed by POST. With their e-services platform they had a much more complex setup but entirely based on this deployment strategy. Shout out to Mariusz P. & Emmanuel B. ^^
+I am happy I had that experience a few years back at P&T Consulting.</br>
+A Luxembourg-based information and communications technology consulting firm specializing in digital solutions. It was majority-owned by POST Luxembourg. I think it no longer exists as it was completely absorbed by POST.</br>
+With their e-services platform they had a much more complex setup but entirely based on this deployment strategy.</br>
+Shout-out, kudos to Mariusz P. & Emmanuel B. !!! </br>
+Sharing is caring and always remember to give credit where credit is due ^^
 
 So... you should know that there are multiple choices when it comes to VM's OS : Ubuntu, CentOS, etc. </br>
 If we stick the aforementioned we have .deb (Debian packages) vs .rpm (Red Hat Package Manager). APT (Advanced Package Tool) vs YUM (Yellowdog Updater, Modified). </br>
@@ -138,6 +142,8 @@ EOF
 - ``systemctl cat spring-boot-app``
 - ``systemctl show spring-boot-app -p ExecStart``
 - ``systemctl edit spring-boot-app.service --full``
+
+The deliverables should look something like that
 
 ![maven-snapshots](./maven-snapshots.png)
 ![rpm-releases](./rpm-releases.png)
