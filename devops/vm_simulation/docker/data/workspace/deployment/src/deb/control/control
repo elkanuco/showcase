@@ -1,0 +1,11 @@
+Package: spring-boot-app
+Version: [[version]]
+Section: web
+Priority: optional
+Architecture: all
+Depends: openjdk-11-jre-headless | openjdk-11-jre
+Maintainer: DevOps Team <devops@elkanuco.lu>
+Description: Spring Boot Demo Application
+ A Spring Boot application packaged as a systemd service.
+ This package installs the application to /opt/spring-boot-app
+ and configures it to run as a systemd service.

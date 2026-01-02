@@ -15,7 +15,7 @@ Already a pro? Just edit this README.md and make it your own. Want to make it ea
 
 ```
 cd existing_repo
-git remote add origin http://gitlab.elkanuco.lu/root/spring-boot-app.git
+git remote add origin http://gitlab.elkanuco.lu/root/workspace.git
 git branch -M main
 git push -uf origin main
 ```

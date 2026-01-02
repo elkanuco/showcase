@@ -5,7 +5,6 @@ echo "========================================="
 echo "Complete CI/CD Workflow"
 echo "========================================="
 
-cd /data/workspace
 
 
 echo "========================================="
@@ -14,38 +13,46 @@ echo "========================================="
 echo "docker exec -it gitlab cat /etc/gitlab/initial_root_password"
 echo "1. Access GitLab at: http://localhost:8880"
 echo "2. Login with username: root"
-echo "   Password: JOmsSWykDbFExvjc2bs84+JDLYZ5RF65CSefbym9Eu0="
+echo "   Password: GilWWr7hzIFT8BGCB0VZ+Hl6J2nJGimpZQQPM2K9eeA="
 echo "3. Create a new project: spring-boot-app"
 echo "4. Get the clone URL"
 echo ""
 read -p "Press enter after creating the GitLab project..."
 
+#HOST ONLY GITLAB_PASSWORD=$(docker exec -it gitlab cat /etc/gitlab/initial_root_password|grep Password|awk -F': ' '{print $2}')
+#HOST ONLY ENCODED_GITLAB_PASSWORD=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$GITLAB_PASSWORD")
+#HOST ONLY echo "$ENCODED_GITLAB_PASSORD"
+#HOST ONLY git remote add origin http://root:${ENCODED_GITLAB_PASSWORD}@gitlab:80/root/workspace.git
+
 # Initialize Git repository
-cd spring-boot-app
+cd /data/workspace
 git init
-git remote add origin http://root:JOmsSWykDbFExvjc2bs84+JDLYZ5RF65CSefbym9Eu0=@gitlab.local:8880/root/spring-boot-app.git
+git remote add origin http://root:blCb%2BU9x%2BC5GsaA3Uvkb7ObuZPdMHTFbxsgxc%2FQdJLA%3D@gitlab:80/root/workspace.git
+#git remote rm origin
+#git remote set-url origin
 
 # Add files
 git add .
 git commit -m "Initial commit: Spring Boot application with RPM packaging"
-git branch -M main
-git pull
-git rebase origin/main
-git push -u origin main
+git branch -M develop
+#git pull
+#git rebase origin/develop
+git push -u origin develop
 
 echo "========================================="
 echo "Code pushed to GitLab!"
 echo "========================================="
 
-# Build and deploy to Nexus
-echo "Building and deploying to Nexus..."
-cd spring-boot-app
-mvn clean install deploy -s ../settings.xml
+# Build 
+mvn clean install -s ../settings.xml
+
+#Release
+mvn release:clean release:prepare release:perform -DreleaseVersion=1.0.0 -DdevelopmentVersion=2.0.0-SNAPSHOT -Dtag=v1.0.0 -s settings.xml
+#mvn release:rollback -s settings.xml
 
 # Build RPM package
-echo "Building RPM package..."
 cd ../deployment
-mvn clean package -s ../settings.xml
+mvn clean install -Dapp.jar.version=1.0.0 -Prpm -s ../settings.xml 
 
 # Upload RPM to Nexus
 echo "Uploading RPM to Nexus..."
@@ -69,8 +76,8 @@ cd "$TEMP_REPO"
 # THIS IS CRITICAL - Download ALL existing RPMs
 curl -s -u deployment:deployment123 \
     "http://nexus:8081/service/rest/v1/components?repository=rpm-releases" | \
-    grep -o '"downloadUrl":"[^"]*\.rpm"' | \
-    sed 's/"downloadUrl":"//;s/"//' | \
+    grep -o '"downloadUrl" : "[^"]*\.rpm"' | \
+    sed 's/"downloadUrl" : "//;s/"//' | \
     while read url; do
         filename=$(basename "$url")
         echo "  Downloading: $filename"
@@ -110,14 +117,40 @@ echo "========================================="
 # Configure YUM and install
 
 
-yum clean all && yum makecache && yum list available spring-boot-app
+yum clean all && yum makecache && yum list available spring-boot-app --showduplicates
 
 export DB_PASSWORD=password
+
+sudo tee /etc/default/spring-boot-app <<EOF
+DB_PASSWORD=password
+EOF
+chown -R springboot:springboot /etc/default/spring-boot-app
+chmod -R u+rwX,go+rX /etc/default/spring-boot-app
 
 # Install the RPM
 echo "Installing RPM package..."
 yum install -y spring-boot-app
 # yum autoremove -y spring-boot-app
+
+
+#chown -R springboot:springboot /opt/spring-boot-app/
+#chmod -R u+rwX,go+rX /opt/spring-boot-app/
+#chmod 644 /opt/spring-boot-app/config/application.properties
+#ls -la /opt/spring-boot-app/config/
+
+#docker inspect gitlab-runner | grep -A 10 Networks
+docker exec -it gitlab-runner bash
+
+gitlab-runner register \
+  --non-interactive \
+  --url "http://gitlab:80" \
+  --registration-token "GR1348941d5WXgLPnHxcKLhJ2d1sj" \
+  --executor "docker" \
+  --docker-image "alpine:latest" \
+  --description "docker-runner" \
+  --docker-network-mode "docker_default" \
+  --run-untagged="true" \
+  --locked="false"
 
 echo "========================================="
 echo "Installation completed!"

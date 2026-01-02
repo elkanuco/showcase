@@ -25,7 +25,7 @@ public class HelloController {
         response.put("message", "Hello from " + appName);
         response.put("environment", environment);
         response.put("database", dbUrl);
-        response.put("status", "running");
+        response.put("status", "running wild II");
         return response;
     }
 

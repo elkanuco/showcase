@@ -41,18 +41,46 @@ services:
       - ./logs:/var/log/gitlab
       - gitlab-data:/var/opt/gitlab
     shm_size: "256m"
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    depends_on:
+      - gitlab
+    volumes:
+      - ./gitlab-runner-config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
   centos:
     image: centos:7
     container_name: centos-container
     stdin_open: true # Equivalent to -i
     tty: true # Equivalent to -t
     privileged: true
-    command: /usr/sbin/init
+    command: /usr/sbin/init # runs systemd
     volumes:
       - ./data:/data
       - ./scripts:/scripts
     ports:
       - "8888:8080"
+  ubuntu:
+    build:
+      context: ./ubuntu
+      dockerfile: Dockerfile
+    container_name: ubuntu-container
+    privileged: true
+    tty: true # Equivalent to -t
+    stdin_open: true # Equivalent to -i
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+      - ./data:/data
+      - ./scripts:/scripts
+    tmpfs:
+      - /run
+      - /run/lock
+      - /tmp
+    stop_signal: SIGRTMIN+3
+    ports:
+      - "8899:8080"
 
 volumes:
   postgres_data:

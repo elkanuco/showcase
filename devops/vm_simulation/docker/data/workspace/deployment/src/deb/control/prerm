@@ -1,0 +1,13 @@
+#!/bin/bash
+set -e
+
+# Stop service if running
+if systemctl is-active --quiet spring-boot-app 2>/dev/null; then
+    systemctl stop spring-boot-app
+    echo "Stopped spring-boot-app service"
+fi
+
+# Disable service
+systemctl disable spring-boot-app.service 2>/dev/null || true
+
+exit 0

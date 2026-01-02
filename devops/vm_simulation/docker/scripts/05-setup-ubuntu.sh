@@ -1,75 +1,57 @@
 #!/bin/bash
 set -e
-# docker exec -it centos-container bash
+# docker exec -it ubuntu-container bash
+
 echo "========================================="
-echo "Setting up CentOS Development Container"
+echo "Setting up Ubuntu Development Container"
 echo "========================================="
 
 # Update system
-cd /etc/yum.repos.d/
-
-# Backup the old repo files (just in case)
-sed -i 's/^/#/' *.repo
-
-# Create a new vault repo file
-cat > centos7-vault.repo << 'EOF'
-[base]
-name=CentOS-7 - Base
-baseurl=http://vault.centos.org/centos/7/os/x86_64/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled=1
-
-[updates]
-name=CentOS-7 - Updates
-baseurl=http://vault.centos.org/centos/7/updates/x86_64/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled=1
-
-[extras]
-name=CentOS-7 - Extras
-baseurl=http://vault.centos.org/centos/7/extras/x86_64/
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-enabled=1
-EOF
-
-# Clear yum cache and test
-yum clean all && yum makecache && yum update -y
+apt-get update && apt-get upgrade -y
 
 # Install development tools
-yum install -y \
-    maven \
+apt-get install -y \
     git \
     wget \
     curl \
     vim \
-    createrepo \
-    rpm-build \
-    rpmdevtools \
-    wget \
-    git \
+    gnupg \
+    software-properties-common \
+    build-essential \
+    dpkg-dev \
+    debhelper \
+    devscripts \
+    fakeroot \
+    lintian
 
+# Install Java 17
 cd /opt
 wget https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.10%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.10_7.tar.gz
 tar xzf OpenJDK17U-jdk_x64_linux_hotspot_17.0.10_7.tar.gz
 ln -s jdk-17.0.10+7 java
-alternatives --install /usr/bin/java java /opt/java/bin/java 1
-alternatives --set java /opt/java/bin/java
 
-# Install Maven 3.8+ (CentOS 7 has old Maven)
+# Set up alternatives for Java
+update-alternatives --install /usr/bin/java java /opt/java/bin/java 1
+update-alternatives --set java /opt/java/bin/java
+
+# Install Maven 3.9
 cd /opt
 wget https://dlcdn.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz
 tar xzf apache-maven-3.9.12-bin.tar.gz
 ln -s apache-maven-3.9.12 maven
 
+mkdir -p /opt/tmp
+export MAVEN_OPTS="-Djansi.tmpdir=/opt/tmp"
+export MAVEN_OPTS="-Djansi.passthrough=true"
+
+
 # Set environment variables
 cat >> /root/.bashrc << 'EOF'
 export JAVA_HOME=/opt/java
 export M2_HOME=/opt/maven
-export PATH=$M2_HOME/bin:$PATH
-export PATH=$JAVA_HOME/bin:$PATH
+export PATH=$M2_HOME/bin:$JAVA_HOME/bin:$PATH
+export NEXUS_URL=http://nexus:8081
+export GITLAB_URL=http://gitlab.elkanuco.lu:8880
 EOF
 
 source /root/.bashrc
@@ -80,9 +62,17 @@ git config --global user.email "devops@example.com"
 git config --global http.sslVerify false
 git config --global --add safe.directory /data/workspace/spring-boot-app 
 
+# Add hosts entries
+echo "127.0.0.1 gitlab.elkanuco.lu" >> /etc/hosts
+
+# Create debian package building directory structure
+mkdir -p /root/debbuild/{BUILD,DEBS,SOURCES}
 
 echo "========================================="
 echo "Setup completed!"
 echo "Maven version: $(mvn -version)"
 echo "Java version: $(java -version)"
+echo "========================================="
+echo "Debian package tools installed"
+echo "Ready to build .deb packages!"
 echo "========================================="

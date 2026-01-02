@@ -1,0 +1,17 @@
+#!/bin/bash
+# Set ownership
+chown -R springboot:springboot /opt/spring-boot-app
+chown -R springboot:springboot /var/log/spring-boot-app
+
+# Reload systemd
+systemctl daemon-reload
+systemctl enable spring-boot-app.service
+
+echo "============================================"
+echo "Spring Boot App installed successfully!"
+echo "============================================"
+echo "Configure: /opt/spring-boot-app/config/application.properties"
+echo "Start: systemctl start spring-boot-app"
+echo "Status: systemctl status spring-boot-app"
+echo "Logs: journalctl -u spring-boot-app -f"
+echo "============================================"

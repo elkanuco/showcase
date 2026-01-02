@@ -1,0 +1,316 @@
+image: maven:3.9.9-eclipse-temurin-21
+
+stages:
+  - verify
+  - release
+  - rpm
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+cache:
+  paths:
+    - .m2/repository/
+
+# 1) MR pipeline: mvn clean install on feature branches targeting develop
+maven_verify_mr:
+  stage: verify
+  cache:  # Cache only for MR verification
+    paths:
+      - .m2/repository/
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "merge_request_event"'
+      when: on_success
+  script:
+    - mvn clean install -B
+  
+# 2) On push to develop: build + maven release
+maven_release:
+  stage: release
+  cache: []  # Disable cache for this job
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "develop" && $CI_PIPELINE_SOURCE == "push" && $CI_COMMIT_MESSAGE !~ /\[maven-release-plugin\]/'
+      when: on_success
+  before_script:
+    # Checkout the actual branch (CI runs in detached HEAD by default)
+    - git checkout -B "$CI_COMMIT_BRANCH"
+    # Configure Git identity for maven-release-plugin
+    - git config --global user.email "gitlab-ci@elkanuco.lu"
+    - git config --global user.name "GitLab CI"
+    # Configure Git to push using the CI token
+    - git remote set-url origin "http://gitlab-ci-token:${CI_JOB_TOKEN}@gitlab/root/workspace.git"
+  script:
+    # Optional: ensure clean workspace
+    - mvn clean install -B
+    # Adjust goals and arguments to your release configuration
+    - mvn -B -Darguments=-DskipTests release:clean release:prepare release:perform -s settings.xml
+
+# 3) On tag: build RPM and publish to Nexus
+build_and_publish_rpm:
+  stage: rpm
+  cache: []  # Disable cache for this job
+  image: centos:7
+  rules:
+    - if: '$CI_COMMIT_TAG'
+      when: on_success
+  before_script: |
+    echo "========================================="
+    echo "Setting up CentOS Development Container"
+    echo "========================================="
+    # Update system
+    pushd /etc/yum.repos.d/
+    # Backup the old repo files (just in case)
+    sed -i 's/^/#/' *.repo
+    # Create a new vault repo file
+    cat > centos7-vault.repo << 'EOF'
+    [base]
+    name=CentOS-7 - Base
+    baseurl=http://vault.centos.org/centos/7/os/x86_64/
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    enabled=1
+
+    [updates]
+    name=CentOS-7 - Updates
+    baseurl=http://vault.centos.org/centos/7/updates/x86_64/
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    enabled=1
+
+    [extras]
+    name=CentOS-7 - Extras
+    baseurl=http://vault.centos.org/centos/7/extras/x86_64/
+    gpgcheck=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    enabled=1
+    
+    EOF
+
+    popd
+
+    # Clear yum cache and test
+
+    yum clean all && yum makecache && yum update -y
+
+    # Install development tools
+
+    yum install -y \
+        wget \
+        curl \
+        vim \
+        createrepo \
+        rpm-build \
+        rpmdevtools
+
+    # Install jdk and mvn
+
+    pwd
+    ls -rtlah 
+    
+
+    # Install jdk
+
+    pushd /opt
+
+    wget https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.10%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.10_7.tar.gz
+    
+    tar xzf OpenJDK17U-jdk_x64_linux_hotspot_17.0.10_7.tar.gz
+    
+    ln -sf jdk-17.0.10+7 java
+    
+    alternatives --install /usr/bin/java java /opt/java/bin/java 1
+    
+    alternatives --set java /opt/java/bin/java
+
+    popd
+
+    pwd
+    ls -rtlah 
+
+    # Install Maven 3.8+ (CentOS 7 has old Maven)
+
+    pushd /opt
+
+    wget https://dlcdn.apache.org/maven/maven-3/3.9.12/binaries/apache-maven-3.9.12-bin.tar.gz
+    
+    tar xzf apache-maven-3.9.12-bin.tar.gz
+    
+    ln -sf apache-maven-3.9.12 maven
+    
+    ls -rtlah /opt
+
+    popd
+
+    # Install latest jq static binary (no dependencies)
+    wget -O /usr/local/bin/jq https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-linux-arm64
+    chmod +x /usr/local/bin/jq
+    jq --version  # optional: verify
+
+    # Set environment variables
+
+    cat >> /root/.bashrc << 'EOF'
+    export JAVA_HOME=/opt/java
+    export M2_HOME=/opt/maven
+    export PATH=$M2_HOME/bin:$PATH
+    export PATH=$JAVA_HOME/bin:$PATH
+    EOF
+
+    source /root/.bashrc
+    
+    echo "========================================="
+    echo "Setup completed!"
+    echo "Maven version: $(mvn -version)"
+    echo "Java version: $(java -version)"
+    echo "========================================="
+  script: |
+    # Set environment again in script section (before_script and script are separate shells)
+    export JAVA_HOME=/opt/java
+    export M2_HOME=/opt/maven
+    export JQ_HOME=/usr/local
+    export PATH=$JQ_HOME/bin:$M2_HOME/bin:$JAVA_HOME/bin:$PATH
+    # Derive version from tag, e.g. v1.0.0 -> 1.0.0
+    APP_VERSION="${CI_COMMIT_TAG#v}"
+    echo  $APP_VERSION
+
+    # Build RPM (adjust path and profiles to your project)
+    cd deployment
+    mvn clean install -Dapp.jar.version="${APP_VERSION}" -Prpm -s ../settings.xml
+
+    # Locate rpm
+    RPM_FILE=$(find target/rpm -name "*.rpm" | head -n 1)
+    RPM_FILENAME=$(basename "$RPM_FILE")
+
+    # Prepare temp repo
+
+    TEMP_REPO=$(mktemp -d)
+
+    cp "$RPM_FILE" "$TEMP_REPO/"
+
+    cd "$TEMP_REPO"
+
+    # Download existing RPMs from Nexus raw repo
+
+    # Step 1: Fetch the JSON list of components from Nexus repository
+    # Using curl with verbose (-v) and silent (-s) mode, basic auth
+    echo "Step 1: Fetching component list from Nexus..."
+    raw_json=$(curl -s -u deployment:deployment123 \
+      "http://nexus:8081/service/rest/v1/components?repository=rpm-releases")
+
+    echo "Raw JSON response stored in variable 'raw_json'"
+    echo "Length of response: ${#raw_json} characters"
+
+    # Step 2: Extract lines that contain "downloadUrl" ending with .rpm
+    echo "Step 2: Extracting downloadUrl lines for .rpm files..."
+
+    clean_urls=$(echo "$raw_json" | jq -r '.items[]?.assets[]?.downloadUrl | select(endswith(".rpm"))')
+
+    echo "Found $(echo "$clean_urls" | wc -l) .rpm downloadUrl entries"
+    echo "Extracted lines stored in 'clean_urls':"
+    echo "$clean_urls"
+
+    # Step 4: Loop over each clean URL, download the file
+    echo "Step 4: Starting downloads..."
+    echo "$clean_urls" | while read url; do
+      # Skip empty lines
+      [ -z "$url" ] && continue
+      
+      # Extract filename from URL
+      filename=$(basename "$url")
+      
+      echo "  Processing URL: $url"
+      echo "  Filename: $filename"
+      
+      # Download the file
+      echo "  Downloading: $filename"
+      wget -q --user=deployment --password=deployment123 "$url"
+      
+      # Check if download succeeded
+      if [ $? -eq 0 ]; then
+        echo "  Success: $filename downloaded successfully"
+      else
+        echo "  Error: Failed to download $filename"
+      fi
+      
+      echo "  ---"
+    done
+
+    echo "All downloads attempted."
+
+    curl -v -X DELETE -u deployment:deployment123 http://nexus:8081/repository/rpm-releases/repodata/
+    
+    # Recreate metadata for all RPMs
+    ls -rtlah
+    createrepo .
+
+    # Upload new RPM
+    curl -v -u deployment:deployment123 --upload-file "${RPM_FILENAME}" http://nexus:8081/repository/rpm-releases/"${RPM_FILENAME}"
+
+    # Upload repodata
+    # Step 1: Change into the repodata directory
+    echo "Step 1: Changing directory to 'repodata'..."
+    cd repodata || {
+      echo "Error: Directory 'repodata' not found or inaccessible!"
+      exit 1
+    }
+
+    echo "Successfully entered directory: $(pwd)"
+
+    # Step 2: Get the list of all files in the current directory (repodata)
+    echo ""
+    echo "Step 2: Listing all files in repodata/..."
+    file_list=(*)  # Bash array containing all files/directories
+
+    # Filter out directories - only keep regular files
+    echo "Found ${#file_list[@]} items in directory."
+    echo "Filtering to include only regular files..."
+
+    # Build a clean array of only regular files
+    regular_files=()
+    for item in "${file_list[@]}"; do
+      if [[ -f "$item" && ! -d "$item" ]]; then
+        regular_files+=("$item")
+      fi
+    done
+
+    echo "Found ${#regular_files[@]} regular file(s) to upload:"
+    for file in "${regular_files[@]}"; do
+      echo "  - $file"
+    done
+
+    # Step 3: Upload each file one by one
+    echo ""
+    echo "Step 3: Starting uploads to Nexus repository..."
+
+    for file in "${regular_files[@]}"; do
+      # Skip if file is empty or unreadable (extra safety)
+      if [[ ! -r "$file" ]]; then
+        echo "  Warning: Skipping '$file' (not readable)"
+        continue
+      fi
+
+      file_size=$(stat -c%s "$file" 2>/dev/null || echo "unknown")
+      target_url="http://nexus:8081/repository/rpm-releases/repodata/$file"
+
+      echo "  Uploading: repodata/$file"
+      echo "    File size: $file_size bytes"
+      echo "    Target URL: $target_url"
+
+      # Perform the upload and capture HTTP response code
+      http_response=$(curl -u deployment:deployment123 \
+        --upload-file "$file" \
+        -w "%{http_code}" \
+        -o /dev/null \
+        -s \
+        "$target_url")
+
+      # Check result
+      if [[ "$http_response" == 201 || "$http_response" == 200 ]]; then
+        echo "  Success: $file uploaded successfully (HTTP $http_response)"
+      else
+        echo "  Error: Failed to upload $file (HTTP $http_response)"
+      fi
+
+      echo "  ---"
+    done
+
+    echo ""
+    echo "All uploads completed."

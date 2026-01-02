@@ -8,8 +8,8 @@ User=springboot
 Group=springboot
 WorkingDirectory=/opt/spring-boot-app
 Environment="JAVA_HOME=/opt/java" 
-Environment="DB_PASSWORD=password"
-ExecStart=/usr/bin/java -jar /opt/spring-boot-app/spring-boot-app-*.jar --spring.config.location=file:/opt/spring-boot-app/config/application.properties
+EnvironmentFile=/etc/default/spring-boot-app
+ExecStart=/usr/bin/java -jar /opt/spring-boot-app/spring-boot-app-${app.jar.version}.jar --spring.config.location=file:/opt/spring-boot-app/config/application.properties
 SuccessExitStatus=143
 TimeoutStopSec=10
 Restart=on-failure

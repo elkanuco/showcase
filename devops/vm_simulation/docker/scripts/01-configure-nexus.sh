@@ -26,4 +26,5 @@ echo "   Password: deployment123"
 echo "   Role: nx-admin"
 echo "========================================="
 echo "========================================="
+read -p "Press enter config is done..."
 
