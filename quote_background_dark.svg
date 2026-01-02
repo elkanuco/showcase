@@ -4,7 +4,7 @@
     .wrap { color: #ffffff; font-family: Arial; font-size: 24px;text-align: center; overflow-wrap: break-word; }
   </ns0:style>
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">The truth is simple. If it was complicated, everyone would understand it.</html:div>
+    <html:div class="wrap" id="quote">Where your talents and the needs of the world cross, there lies your vocation.</html:div>
   </ns0:foreignObject>
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; Walt Whitman</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" id="author">&#8212; Aristotle</ns0:text>
 </ns0:svg>
