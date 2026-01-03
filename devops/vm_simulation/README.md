@@ -230,16 +230,17 @@ yum install -y spring-boot-app
 
 ## TODO
 
-- check alternatices to deal with the recreation of the rpm repo (download existing rpm packages and recreate metadata)
+- check alternatives to deal with the recreation of the rpm repo (download existing rpm packages and recreate metadata)
   - is it necessary? does entreprise edition have rpm repo ? does it need to be manually updated?
+  - how to delete the repo folder
 - prevent delete, update of existing rpm packages
 - add hooks to the repo to secure branches and workflow
 - check how to pass environment variables
-  - Remove Environment lines use centralized environment variables in /etc/environment or /etc/default/spring-boot-app as systemd reads them automatically
   - use Vault or GitLab secrets management
 - when a new version is installed we need to call the start
 - check how the logs are managed
   - i added a spring.log file but it should be managed by the journalctl
+- stress test ? 
 
 ## Useful
 
