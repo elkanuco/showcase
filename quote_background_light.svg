@@ -5,8 +5,8 @@
   </ns0:style>
   
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">Hope itself is like a star- not to be seen in the sunshine of prosperity, and only to be discovered in the night of adversity.</html:div>
+    <html:div class="wrap" id="quote">I'd rather welcome change than cling to the past.</html:div>
   </ns0:foreignObject>
   
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Charles Spurgeon</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Robert Kiyosaki</ns0:text>
 </ns0:svg>
