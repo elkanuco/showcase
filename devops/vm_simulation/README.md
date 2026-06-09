@@ -29,11 +29,6 @@ With their e-services platform they had a much more complex setup:
   - to move the deliverables into the application servers (JBoss and Tomcat) deployment folder
   - to do version management
 
-Sharing is caring and always remember to give credit where credit is due ^^ so shout-out/kudos to:
-
-- Mariusz P., Emmanuel H., Emmanuel B., Audrey B., Gregory L., Jérémy C., Miryame A.
-  - and all others involved in this system design !!! It was a learning and valuable experience and for that I am grateful.
-
 So, coming back to the topic at hand, you should know that there are multiple choices when it comes to VM's OS : Ubuntu, CentOS, etc. </br>
 If we stick the aforementioned we have .deb (Debian packages) vs .rpm (Red Hat Package Manager). APT (Advanced Package Tool) vs YUM (Yellowdog Updater, Modified). </br>
 Both Linux distributions have an init system and service manager, systemd responsible for bootstrapping the user space, starting services, and managing processes after the kernel has loaded.</br>
