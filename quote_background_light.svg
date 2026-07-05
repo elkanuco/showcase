@@ -5,8 +5,8 @@
   </ns0:style>
   
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">Self-control is strength.</html:div>
+    <html:div class="wrap" id="quote">Associate yourself with men of good quality, if you esteem your own reputation; for 'tis better to be alone than in bad company.</html:div>
   </ns0:foreignObject>
   
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; James Allen</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; George Washington</ns0:text>
 </ns0:svg>
