@@ -5,8 +5,8 @@
   </ns0:style>
   
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">Never stand begging for that which you have the power to earn.</html:div>
+    <html:div class="wrap" id="quote">Being ignorant is not so much a shame, as being unwilling to learn.</html:div>
   </ns0:foreignObject>
   
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Miguel de Cervantes</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Benjamin Franklin</ns0:text>
 </ns0:svg>
