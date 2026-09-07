@@ -5,8 +5,8 @@
   </ns0:style>
   
   <ns0:foreignObject x="92.5" y="150" width="800" height="200" id="fgquote">
-    <html:div class="wrap" id="quote">A Penny Saved is a Penny Earned</html:div>
+    <html:div class="wrap" id="quote">There are no contests in the Art of Peace. A true warrior is invincible because he or she contests with nothing.</html:div>
   </ns0:foreignObject>
   
-  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Benjamin Franklin</ns0:text>
+  <ns0:text x="492.5" y="300" font-family="Arial" font-size="18" fill="#0d1117" text-anchor="middle" dominant-baseline="middle" lengthAdjust="spacingAndGlyphs" id="author">&#8212; Morihei Ueshiba</ns0:text>
 </ns0:svg>
