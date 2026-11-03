@@ -1,276 +1,333 @@
-# Liquidity and Its Importance at the EIB and Investment Banks
+# Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) Policy
 
-## What is Liquidity?
+## Purpose
 
-Liquidity refers to the ability of a financial institution to meet its payment obligations when they become due, without incurring unacceptable losses.
+The purpose of this policy is to prevent, detect, and report activities related to money laundering, terrorist financing, and other forms of financial crime.
 
-In simple terms:
-
-> Liquidity means having enough cash or assets that can quickly be converted into cash to fund operations, repay debts, honor obligations, and support new investments.
-
-A bank can be profitable and still fail if it lacks sufficient liquidity to meet short-term obligations.
+The organization is committed to maintaining effective controls that ensure compliance with applicable Anti-Money Laundering (AML) and Counter-Terrorist Financing (CTF) laws, regulations, and industry standards.
 
 ---
 
-# Why Liquidity Matters
+## Scope
 
-Every bank operates on a maturity transformation model:
+This policy applies to:
 
-- Borrows money from investors or depositors
-- Lends or invests money for longer periods
-- Must ensure cash is available whenever obligations arise
-
-Liquidity ensures the institution can:
-
-✅ Pay suppliers and operating expenses
-
-✅ Service debt obligations
-
-✅ Fund approved projects
-
-✅ Meet regulatory requirements
-
-✅ Maintain investor confidence
-
-✅ Continue operations during market stress
-
-Without adequate liquidity, even a financially strong institution may face funding difficulties.
+- All employees, contractors, and consultants
+- Third-party service providers acting on behalf of the organization
+- Customers, counterparties, and business partners
+- Products, services, systems, and business processes that may expose the organization to financial crime risks
 
 ---
 
-# Liquidity at the European Investment Bank (EIB)
+## Definitions
 
-The EIB has a unique business model.
+### Anti-Money Laundering (AML)
 
-Unlike commercial banks, the EIB:
+AML refers to measures designed to prevent criminals from disguising illegally obtained funds as legitimate income.
 
-- Raises funds from global capital markets
-- Issues bonds in multiple currencies
-- Uses borrowed funds to finance long-term projects
-- Maintains a strong AAA credit rating
+### Counter-Terrorist Financing (CTF)
 
-Because project loans often have maturities of 10 to 30 years, the EIB must carefully manage liquidity to ensure it can fulfill all future commitments.
+CTF refers to measures aimed at preventing the collection, movement, or use of funds intended to support terrorist activities.
 
----
+### Money Laundering Stages
 
-# How the EIB Generates Liquidity
+#### Placement
 
-## 1. Bond Issuance
-
-The EIB is one of the world's largest supranational borrowers.
-
-It regularly issues:
-
-- Global benchmark bonds
-- Green bonds
-- Sustainability bonds
-- Structured notes
-
-Investors purchase these securities, providing cash that the EIB can use to finance projects.
-
-Example:
-
-```text
-Investor buys €100 million EIB bonds
-            ↓
-EIB receives €100 million cash
-            ↓
-EIB lends funds to approved projects
-```
-
----
-
-## 2. Cash and Treasury Reserves
-
-The EIB Treasury maintains significant liquidity reserves.
-
-These reserves are invested in highly liquid assets such as:
-
-- Government securities
-- Central bank deposits
-- High-quality money market instruments
-
-The objective is to ensure immediate access to funds when needed.
-
----
-
-## 3. Loan Repayments
-
-Borrowers gradually repay:
-
-- Principal
-- Interest
-
-These incoming cash flows replenish the Bank's liquidity position and support new lending operations.
-
----
-
-# Liquidity Risk
-
-Liquidity risk occurs when:
-
-```text
-Cash Outflows > Available Cash Inflows
-```
+Introduction of illicit funds into the financial system.
 
 Examples:
 
-- Large debt repayments become due
-- Bond markets become difficult to access
-- Unexpected project disbursements increase
-- Financial market crises reduce funding availability
+- Cash deposits
+- Conversion into financial instruments
+- Purchase of assets
 
-A liquidity shortage can force institutions to borrow at expensive rates or sell assets at losses.
+#### Layering
 
----
+Movement of funds through multiple transactions to obscure their origin.
 
-# Liquidity Management at the EIB
+Examples:
 
-The EIB Treasury continuously monitors:
+- Multiple transfers between accounts
+- Cross-border transactions
+- Use of intermediary entities
 
-## Cash Position
+#### Integration
 
-Current available cash and highly liquid assets.
+Reintroduction of criminal proceeds into the legitimate economy.
 
-## Funding Needs
+Examples:
 
-Expected future cash requirements from:
-
-- Loan disbursements
-- Debt repayments
-- Operating expenses
-
-## Market Conditions
-
-Assessment of:
-
-- Interest rates
-- Capital market access
-- Investor demand
-
-## Stress Testing
-
-Simulation of adverse scenarios such as:
-
-- Market disruptions
-- Economic crises
-- Reduced access to funding markets
-
-This helps ensure resilience under difficult conditions.
+- Real estate acquisitions
+- Investments
+- Business ownership
 
 ---
 
-# Liquidity Coverage in Practice
+## Guiding Principles
 
-Imagine the EIB expects:
+### Risk-Based Approach
 
-```text
-Loan disbursements:      €15 billion
-Bond repayments:         €10 billion
-Operating costs:         €1 billion
-----------------------------------
-Total cash need:         €26 billion
-```
+AML and CTF controls shall be proportionate to the risks associated with customers, products, services, delivery channels, and jurisdictions.
 
-To remain liquid, the Bank ensures sufficient:
+### Customer Due Diligence
 
-- Cash reserves
-- Maturing investments
-- New bond issuance capacity
+The organization shall establish sufficient understanding of customers and business relationships before engaging in business activities.
 
-to cover these obligations comfortably.
+### Ongoing Monitoring
+
+Customer activity shall be monitored throughout the business relationship to detect unusual or suspicious behavior.
+
+### Compliance Culture
+
+All personnel are responsible for supporting AML and CTF obligations and escalating concerns when identified.
 
 ---
 
-# Liquidity vs Solvency
+## AML / CTF Control Framework
 
-These concepts are often confused.
+### 1. Customer Identification Program (CIP)
 
-## Liquidity
+Prior to establishing a business relationship, the organization shall verify:
 
-Ability to meet short-term obligations.
+- Customer identity
+- Legal status
+- Ownership structure
+- Authorized representatives
+- Source of funds where applicable
 
-Example:
+Examples of verification documents:
 
-```text
-Cash available today to pay bills.
-```
-
-## Solvency
-
-Ability to remain financially sound over the long term.
-
-Example:
-
-```text
-Total Assets > Total Liabilities
-```
-
-A bank may be:
-
-- Solvent but illiquid
-- Liquid but insolvent
-- Both liquid and solvent (desired state)
+- Passport
+- National identity card
+- Certificate of incorporation
+- Business registration records
 
 ---
 
-# Why Liquidity Is Critical for an Investment Bank
+### 2. Customer Due Diligence (CDD)
 
-For investment and development banks such as the EIB, liquidity is especially important because:
+The level of due diligence shall be determined by risk.
 
-### Continuous Lending
+#### Standard Due Diligence
 
-Projects may require funding over many years.
+Applied to the majority of customers.
 
-Without liquidity:
+Requirements include:
 
-```text
-Approved projects cannot be financed on schedule.
-```
+- Identity verification
+- Purpose of relationship
+- Basic risk assessment
 
-### Credit Rating Protection
+#### Enhanced Due Diligence (EDD)
 
-Strong liquidity supports the EIB's AAA rating.
+Applied to higher-risk customers.
 
-A high credit rating allows the Bank to:
+Examples:
 
-- Borrow more cheaply
-- Access global investors
-- Raise larger volumes of capital
+- Politically Exposed Persons (PEPs)
+- High-risk jurisdictions
+- Complex ownership structures
+- Large or unusual transactions
 
-### Crisis Resilience
+Additional controls may include:
 
-During periods of financial stress, liquidity enables the Bank to continue supporting:
-
-- Infrastructure projects
-- SMEs
-- Climate initiatives
-- Government programs
-
-when private financing may become scarce.
-
-### Market Confidence
-
-Investors are more willing to buy EIB bonds when they know the institution maintains strong liquidity buffers.
+- Senior management approval
+- Source of wealth verification
+- Source of funds verification
+- Increased monitoring frequency
 
 ---
 
-# Role of Treasury in Liquidity Management
+### 3. Beneficial Ownership Identification
 
-At the EIB, Treasury functions typically oversee:
+The organization shall identify and verify beneficial owners of legal entities.
 
-- Cash management
-- Funding operations
-- Liquidity forecasting
-- Investment of liquidity portfolios
-- Asset-liability management (ALM)
-- Risk monitoring
-- Regulatory and internal liquidity reporting
+Reasonable measures shall be taken to determine:
 
-Treasury acts as the financial engine that ensures the Bank can always meet its obligations.
+- Ultimate beneficial ownership
+- Control structure
+- Ownership percentages
+- Exercised control rights
 
 ---
 
-# Key Takeaway
+### 4. Sanctions Screening
 
-> Liquidity is the ability of the EIB or any investment bank to access sufficient cash when needed. It is essential for funding projects, repaying debt, maintaining investor confidence, preserving credit ratings, and ensuring the institution can continue operating even during financial market disruptions.
+Customers, counterparties, beneficial owners, and transactions shall be screened against applicable sanctions lists.
+
+Examples include:
+
+- United Nations sanctions
+- European Union sanctions
+- National sanctions programs
+- Internal watchlists
+
+Matches shall be investigated and escalated immediately.
+
+---
+
+### 5. Transaction Monitoring
+
+The organization shall monitor for potential indicators of financial crime.
+
+Examples of suspicious indicators include:
+
+- Unusual transaction volumes
+- Structuring or smurfing activities
+- Transactions lacking clear economic rationale
+- Rapid movement of funds
+- Sudden changes in customer behavior
+- High-risk geographic exposure
+
+---
+
+### 6. Suspicious Activity Reporting
+
+Employees must promptly report suspected money laundering or terrorist financing activities through established internal reporting channels.
+
+Reports should include:
+
+- Customer details
+- Description of suspicious activity
+- Supporting evidence
+- Relevant dates and amounts
+
+Employees must not disclose to customers that a suspicious report has been filed.
+
+---
+
+## Risk Assessment Framework
+
+The organization shall periodically assess AML and CTF risks across:
+
+| Risk Category | Examples |
+|--------------|----------|
+| Customer Risk | PEPs, complex ownership, cash-intensive businesses |
+| Geographic Risk | High-risk or sanctioned jurisdictions |
+| Product Risk | High-value transfers, anonymous services |
+| Transaction Risk | Large, unusual, or complex activity |
+| Channel Risk | Non-face-to-face onboarding, intermediaries |
+
+Controls shall be adjusted according to the assessed risk level.
+
+---
+
+## Roles and Responsibilities
+
+### All Employees
+
+Responsible for:
+
+- Understanding AML and CTF obligations
+- Completing required training
+- Reporting suspicious activities
+- Following established procedures
+
+### Management
+
+Responsible for:
+
+- Supporting AML compliance
+- Allocating adequate resources
+- Reviewing high-risk relationships
+- Promoting a strong compliance culture
+
+### Compliance Function
+
+Responsible for:
+
+- Maintaining the AML/CTF framework
+- Conducting investigations
+- Managing regulatory reporting
+- Monitoring effectiveness of controls
+- Coordinating audits and reviews
+
+---
+
+## Training and Awareness
+
+AML and CTF training shall be provided:
+
+- Upon onboarding
+- Annually thereafter
+- Following significant regulatory changes
+- When new risks are identified
+
+Training should cover:
+
+- AML and CTF fundamentals
+- Recognition of suspicious activities
+- Escalation procedures
+- Regulatory obligations
+- Record-keeping requirements
+
+---
+
+## Record Retention
+
+The organization shall maintain records sufficient to demonstrate compliance.
+
+Examples include:
+
+- Identity verification documentation
+- Risk assessments
+- Screening results
+- Transaction monitoring alerts
+- Investigation records
+- Suspicious activity reports
+- Training records
+
+Records shall be retained according to legal and regulatory requirements.
+
+---
+
+## Independent Review and Audit
+
+The AML and CTF program shall be subject to periodic independent review.
+
+Reviews should assess:
+
+- Policy effectiveness
+- Control design
+- Regulatory compliance
+- Monitoring capabilities
+- Quality of investigations
+- Staff awareness and training
+
+Deficiencies shall be remediated through documented action plans.
+
+---
+
+## Non-Compliance
+
+Failure to comply with AML and CTF obligations may result in:
+
+- Internal disciplinary actions
+- Regulatory sanctions
+- Financial penalties
+- Civil liability
+- Criminal prosecution
+
+---
+
+## Key AML / CTF Controls Summary
+
+| Control Area | Objective |
+|-------------|-----------|
+| Customer Identification | Verify customer identity |
+| Due Diligence | Understand customer risk |
+| Beneficial Ownership | Identify ultimate controllers |
+| Sanctions Screening | Prevent dealings with prohibited parties |
+| Transaction Monitoring | Detect suspicious activity |
+| Reporting | Escalate potential financial crime |
+| Training | Maintain staff awareness |
+| Audit and Review | Validate framework effectiveness |
+
+---
+
+## Governance
+
+This policy shall be reviewed at least annually or whenever significant regulatory, operational, or risk changes occur.
+
+The Compliance Function is responsible for maintaining this policy and recommending updates where necessary.
+
